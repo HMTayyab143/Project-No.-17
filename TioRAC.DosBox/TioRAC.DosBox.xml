@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TioRAC.DosBox</name>
+    </assembly>
+    <members>
+        <member name="T:TioRAC.DosBox.Process.DosBoxParameters">
+            <summary>
+            DosBox command line parameters
+            </summary>
+            <see cref="!:Http://www.dosbox.com/wiki/Usage"/>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Name">
+            <summary>
+            If name is a directory, DOSBox will mount the specified directory as the C drive.
+            If name is an executable, DOSBox will mount the directory of name as the C drive, and start executing name.
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Exit">
+            <summary>
+            DOSBox will close itself when the DOS application name ends. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Commands">
+            <summary>
+            Runs the specified command before running name. Multiple commands can be specified. Each command should start with -c though. A command can be: an Internal Program, a DOS command or an executable on a mounted drive. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Fullscreen">
+            <summary>
+            Starts DOSBox in fullscreen mode. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.UserConf">
+            <summary>
+            Load the configuration from the user's profile or home directory. This is the default behavior, so this switch is useful when using -conf, below. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Configurations">
+            <summary>
+            Load the config file specified in configfilelocation. Useful for specifying particular options for specific games. If used after -userconf, or if you use multiple -conf switches, options present in multiple configs will be overwritten by the last, except for autoexec entries, which will be appended in order. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Languages">
+            <summary>
+            Start DOSBox using the language string specified in languagefilelocation. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Machine">
+            <summary>
+            Setup DOSBox to emulate a specific type of machine. Valid choices are: hercules, cga, ega, pcjr, tandy, svga_s3 (default) as well as the additional svga chipsets listed in the DOSBox configuration file. The machinetype affects the video card and the available sound cards. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.NoConsole">
+            <summary>
+            Start DOSBox without showing the console window, output will be redirected to stdout.txt and stderr.txt. This is useful if DOSBox crashes, since the error messages stored in stdout.txt and stderr.txt may help the developers fixing the problem. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.StartMapper">
+            <summary>
+            Enter the mapper directly on startup. Useful for people with keyboard or joystick problems. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.NoAutoexec">
+            <summary>
+            Skips the [autoexec] section of the loaded configuration file. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.SecureMode">
+            <summary>
+            Same as -noautoexec, but adds config.com -securemode at the bottom of AUTOEXEC.BAT (which in turn disables any changes to how the drives are mounted inside DOSBox). 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Scaler">
+            <summary>
+            Uses the scaler specified by "scaler". See the DOSBox configuration file for the available scalers.
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.ForceScaler">
+            <summary>
+            Similar to the -scaler parameter, but tries to force usage of the specified scaler even if it might not fit.
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Version">
+            <summary>
+            output version information and exit. (see stdout.txt) Useful for frontends. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.EditConfs">
+            <summary>
+            calls program with as first parameter the configuration file. You can specify this command more than once. In this case it will move to second program if the first one fails to start. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.OpenCaptures">
+            <summary>
+            calls program with as first parameter the location of the captures folder. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.PrintConf">
+            <summary>
+            prints the location of the default configuration file. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.ResetConf">
+            <summary>
+            removes the default configuration file. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.ResetMapper">
+            <summary>
+            removes the mapperfile used by the default clean configuration file. 
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.Process.DosBoxParameters.Socket">
+            <summary>
+            passes the socket number to the nullmodem emulation. 
+            </summary>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.New">
+            <summary>
+            Create a new DosBox Parameters object
+            </summary>
+            <returns>New DosBox Parameters object</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.New(System.String)">
+            <summary>
+            Create a new DosBox Parameters object
+            </summary>
+            <param name="name">Add parameter Name</param>
+            <returns>New DosBox Parameters object</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddName(System.String)">
+            <summary>
+            Add parameter name
+            </summary>
+            <param name="name">If name is a directory, DOSBox will mount the specified directory as the C drive.
+            If name is an executable, DOSBox will mount the directory of name as the C drive, and start executing name. </param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddExit">
+            <summary>
+            Add parameter: -exit
+            DOSBox will close itself when the DOS application name ends. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddCommand(System.String)">
+            <summary>
+            Add single parameter command
+            </summary>
+            <param name="command">Runs the specified command before running name.</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddFullscreen">
+            <summary>
+            Add parameter: -fullscreen
+            Starts DOSBox in fullscreen mode. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddUserConf">
+            <summary>
+            Add parameter: -userconf
+            -Load the configuration from the user's profile or home directory.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddConfiguration(System.String)">
+            <summary>
+            Add single parameter conf
+            </summary>
+            <param name="configuration">Load the config file specified.</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddLanguages(System.String)">
+            <summary>
+            Add single parameter lang 
+            </summary>
+            <param name="languages">Start DOSBox using the language string specified</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddMachine(System.String)">
+            <summary>
+            Add parameter: -machine
+            Setup DOSBox to emulate a specific type of machine.
+            </summary>
+            <param name="machine">Valid choices are: hercules, cga, ega, pcjr, tandy, svga_s3 (default)</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddNoConsole">
+            <summary>
+            Add parameter: -noconsole
+            Start DOSBox without showing the console window (Windows Only).
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddStartMapper">
+            <summary>
+            Add parameter: -startmapper
+            Enter the mapper directly on startup.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddNoAutoexec">
+            <summary>
+            Add parameter: -noautoexec
+            Skips the [autoexec] section of the loaded configuration file.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddSecureMode">
+            <summary>
+            Add parameter: -securemode
+            Same as -noautoexec, but adds config.com -securemode at the bottom of AUTOEXEC.BAT
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddScaler">
+            <summary>
+            Add parameter: -scaler
+            Uses the scaler specified by "scaler".
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddForceScaler">
+            <summary>
+            Add parameter: -forcescaler
+            Similar to the -scaler parameter, but tries to force usage of the specified scaler even if it might not fit.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddVersion">
+            <summary>
+            Add parameter: -version
+            output version information and exit.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddEditConf(System.String)">
+            <summary>
+            Add single parameter editconf 
+            </summary>
+            <param name="editConf">Calls program with as first parameter the configuration file.</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddOpenCaptures(System.String)">
+            <summary>
+            Add parameter: -opencaptures
+            Calls program with as first parameter the location of the captures folder. 
+            </summary>
+            <param name="openCaptures">Progam location</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddPrintConf">
+            <summary>
+            Add parameter: -printconf
+            Prints the location of the default configuration file. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddResetConf">
+            <summary>
+            Add parameter: -resetconf
+            Removes the default configuration file.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddResetMapper">
+            <summary>
+            Add parameter: -resetmapper
+            Removes the mapperfile used by the default clean configuration file. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.AddSocket">
+            <summary>
+            Add parameter: -socket
+            Passes the socket number to the nullmodem emulation. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="F:TioRAC.DosBox.Process.DosBoxParameters.PropertyChangedHandler">
+            <summary>
+            Handler Property Changed
+            </summary>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.OnPropertyChanged(System.String)">
+            <summary>
+            Notify Property Changed
+            </summary>
+            <param name="name">Name Property</param>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.ToString">
+            <summary>
+            Return string with parameters
+            </summary>
+            <returns>String with parameters</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.CastString(System.String)">
+            <summary>
+            Load parameters from string
+            </summary>
+            <param name="parameters">String with parameters</param>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.GetOptionParameter(System.Collections.Generic.List{System.String})">
+            <summary>
+            Get parameter options 
+            </summary>
+            <param name="listParameters">List parameters string split</param>
+            <returns>Parameter options</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.FromString(System.String)">
+            <summary>
+            Get DosBoxParameters from string with parameters
+            </summary>
+            <param name="parameters">String with parameters</param>
+            <returns>DosBox object with parameters</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.op_Implicit(TioRAC.DosBox.Process.DosBoxParameters)~System.String">
+            <summary>
+            Cast DosBox Parameters to string
+            </summary>
+            <param name="parameters">DosBox Parameters</param>
+        </member>
+        <member name="M:TioRAC.DosBox.Process.DosBoxParameters.op_Implicit(System.String)~TioRAC.DosBox.Process.DosBoxParameters">
+            <summary>
+            Cast string to DosBox Parameters
+            </summary>
+            <param name="parameters">DosBox Parameters</param>
+        </member>
+    </members>
+</doc>

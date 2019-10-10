@@ -73,5 +73,15 @@ namespace TioRAC.DosBoxTest.ProcessTest
             Assert.AreEqual(test.Machine, "cga");
             Assert.AreEqual(test.OpenCaptures, "capture");
         }
+
+        [Test]
+        public void CastTest()
+        {
+            string startParameters = "jogo.exe -exit -c \"dir pasta\" -fullscreen -userconf -conf jogo.conf -lang lang.conf -machine cga -noconsole -startmapper -noautoexec -securemode -scaler -forcescaler -version -editconf myEditConfig -opencaptures capture -printconf -resetconf -resetmapper -socket";
+            DosBoxParameters dosBoxParameters = startParameters;
+            string endParameters = dosBoxParameters;
+
+            Assert.AreEqual(startParameters, endParameters);
+        }
     }
 }

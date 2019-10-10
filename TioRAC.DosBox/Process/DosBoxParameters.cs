@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using static System.Net.WebRequestMethods;
 
 namespace TioRAC.DosBox.Process
 {
     /// <summary>
-    /// DosBox command line parameters
+    /// DosBox command line parameters see: <a href="https://www.dosbox.com/wiki/Usage">DosBox Wiki: Usage</a>
     /// </summary>
-    /// <see cref="https://www.dosbox.com/wiki/Usage"/>
     public class DosBoxParameters : INotifyPropertyChanged
     {
         #region "Constructions"
 
+        ///<summary>
+        ///Create new instance to DosBoxParameters with parameters for DosBox application
+        ///<summary>
         public DosBoxParameters()
         {
             this.Commands = new ObservableCollection<string>();
@@ -22,6 +25,10 @@ namespace TioRAC.DosBox.Process
             this.EditConfs = new ObservableCollection<string>();
         }
 
+        ///<summary>
+        ///Create new instance to DosBoxParameters with parameters for DosBox application
+        ///<summary>
+        /// <param name="name">Add parameter Name <seealso cref="DosBoxParameters.Name" /></param>
         public DosBoxParameters(string name)
             : this()
         {
@@ -59,8 +66,8 @@ namespace TioRAC.DosBox.Process
         #region "Properties"
 
         /// <summary>
-        /// If name is a directory, DOSBox will mount the specified directory as the C drive.
-        /// If name is an executable, DOSBox will mount the directory of name as the C drive, and start executing name.
+        /// <para>If name is a directory, DOSBox will mount the specified directory as the C drive.</para>
+        /// <para>If name is an executable, DOSBox will mount the directory of name as the C drive, and start executing name.</para>
         /// </summary>
         [MinDosBox("0.74")]
         public string Name
@@ -433,7 +440,7 @@ namespace TioRAC.DosBox.Process
         /// <summary>
         /// Create a new DosBox Parameters object
         /// </summary>
-        /// <param name="name">Add parameter Name</param>
+        /// <param name="name">Add parameter Name <seealso cref="DosBoxParameters.Name" /></param>
         /// <returns>New DosBox Parameters object</returns>
         public static DosBoxParameters New(string name)
         {
