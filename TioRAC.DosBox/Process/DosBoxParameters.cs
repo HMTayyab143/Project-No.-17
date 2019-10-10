@@ -678,6 +678,9 @@ namespace TioRAC.DosBox.Process
 
         #region "INotifyPropertyChanged"
 
+        /// <summary>
+        /// Handler Property Changed
+        /// </summary>
         protected PropertyChangedEventHandler PropertyChangedHandler;
         event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
         {
@@ -691,6 +694,10 @@ namespace TioRAC.DosBox.Process
             }
         }
 
+        /// <summary>
+        /// Notify Property Changed
+        /// </summary>
+        /// <param name="name">Name Property</param>
         protected void OnPropertyChanged(string name)
         {
             PropertyChangedHandler?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -700,6 +707,10 @@ namespace TioRAC.DosBox.Process
 
         #region "String Casts"
 
+        /// <summary>
+        /// Return string with parameters
+        /// </summary>
+        /// <returns>String with parameters</returns>
         public override string ToString()
         {
             var listArguments = new List<string>();
@@ -770,11 +781,145 @@ namespace TioRAC.DosBox.Process
             return string.Join(" ", listArguments);
         }
 
+        /// <summary>
+        /// Load parameters from string
+        /// </summary>
+        /// <param name="parameters">String with parameters</param>
         protected void CastString(string parameters)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(parameters))
+                return;
+
+            var listParameters = parameters.Replace("  ", " ").Split(' ').ToList();
+            
+            if (!listParameters.FirstOrDefault().StartsWith("-"))
+            {
+                Name = listParameters.FirstOrDefault();
+                listParameters.RemoveAt(0);
+            }
+
+            while (listParameters.Count > 0)
+            {
+                var parameter = listParameters.FirstOrDefault().Trim();
+                listParameters.RemoveAt(0);
+
+                switch (parameter)
+                {
+                    case "-exit":
+                        AddExit();
+                        break;
+
+                    case "-c":
+                        AddCommand(GetOptionParameter(listParameters));
+                        break;
+
+                    case "-fullscreen":
+                        AddFullscreen();
+                        break;
+
+                    case "-userconf":
+                        AddUserConf();
+                        break;
+
+                    case "-conf":
+                        AddConfiguration(GetOptionParameter(listParameters));
+                        break;
+
+                    case "-lang":
+                        AddLanguages(GetOptionParameter(listParameters));
+                        break;
+
+                    case "-machine":
+                        AddMachine(GetOptionParameter(listParameters));
+                        break;
+
+                    case "-noconsole":
+                        AddNoConsole();
+                        break;
+
+                    case "-startmapper":
+                        AddStartMapper();
+                        break;
+
+                    case "-noautoexec":
+                        AddNoAutoexec();
+                        break;
+
+                    case "-securemode":
+                        AddSecureMode();
+                        break;
+
+                    case "-scaler":
+                        AddScaler();
+                        break;
+
+                    case "-forcescaler":
+                        AddForceScaler();
+                        break;
+
+                    case "-version":
+                        AddVersion();
+                        break;
+
+                    case "-editconf":
+                        AddEditConf(GetOptionParameter(listParameters));
+                        break;
+
+                    case "-opencaptures":
+                        AddOpenCaptures(GetOptionParameter(listParameters));
+                        break;
+
+                    case "-printconf":
+                        AddPrintConf();
+                        break;
+
+                    case "-resetconf":
+                        AddResetConf();
+                        break;
+
+                    case "-resetmapper":
+                        AddResetMapper();
+                        break;
+
+                    case "-socket":
+                        AddSocket();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
         }
 
+        /// <summary>
+        /// Get parameter options 
+        /// </summary>
+        /// <param name="listParameters">List parameters string split</param>
+        /// <returns>Parameter options</returns>
+        private static string GetOptionParameter(List<string> listParameters)
+        {
+            var option = listParameters.FirstOrDefault();
+            listParameters.RemoveAt(0);
+
+            if (option.StartsWith("\""))
+            {
+                while (!option.EndsWith("\""))
+                {
+                    option += $" {listParameters.FirstOrDefault()}";
+                    listParameters.RemoveAt(0);
+                }
+
+                option = option.Substring(1, option.Length - 2);
+            }
+
+            return option;
+        }
+
+        /// <summary>
+        /// Get DosBoxParameters from string with parameters
+        /// </summary>
+        /// <param name="parameters">String with parameters</param>
+        /// <returns>DosBox object with parameters</returns>
         public static DosBoxParameters FromString(string parameters)
         {
             var myArguments = new DosBoxParameters();
