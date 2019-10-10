@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using static System.Net.WebRequestMethods;
 
 namespace TioRAC.DosBox.Process
 {
@@ -16,7 +15,7 @@ namespace TioRAC.DosBox.Process
 
         ///<summary>
         ///Create new instance to DosBoxParameters with parameters for DosBox application
-        ///<summary>
+        ///</summary>
         public DosBoxParameters()
         {
             this.Commands = new ObservableCollection<string>();
@@ -27,7 +26,7 @@ namespace TioRAC.DosBox.Process
 
         ///<summary>
         ///Create new instance to DosBoxParameters with parameters for DosBox application
-        ///<summary>
+        ///</summary>
         /// <param name="name">Add parameter Name <seealso cref="DosBoxParameters.Name" /></param>
         public DosBoxParameters(string name)
             : this()
@@ -432,7 +431,7 @@ namespace TioRAC.DosBox.Process
         /// Create a new DosBox Parameters object
         /// </summary>
         /// <returns>New DosBox Parameters object</returns>
-        public static DosBoxParameters New()
+        public static DosBoxParameters Create()
         {
             return new DosBoxParameters();
         }
@@ -442,7 +441,7 @@ namespace TioRAC.DosBox.Process
         /// </summary>
         /// <param name="name">Add parameter Name <seealso cref="DosBoxParameters.Name" /></param>
         /// <returns>New DosBox Parameters object</returns>
-        public static DosBoxParameters New(string name)
+        public static DosBoxParameters Create(string name)
         {
             return new DosBoxParameters(name);
         }
@@ -723,7 +722,7 @@ namespace TioRAC.DosBox.Process
             var listArguments = new List<string>();
 
             if (!string.IsNullOrWhiteSpace(Name))
-                listArguments.Add(Name);
+                listArguments.Add($"\"{Name}\"");
 
             if (Exit)
                 listArguments.Add("-exit");
@@ -771,7 +770,7 @@ namespace TioRAC.DosBox.Process
                 listArguments.AddRange(EditConfs.Select(editconf=> $"-editconf \"{editconf}\""));
 
             if (!string.IsNullOrWhiteSpace(OpenCaptures))
-                listArguments.Add($"-opencaptures {OpenCaptures}");
+                listArguments.Add($"-opencaptures \"{OpenCaptures}\"");
 
             if (PrintConf)
                 listArguments.Add("-printconf");
@@ -801,8 +800,7 @@ namespace TioRAC.DosBox.Process
             
             if (!listParameters.FirstOrDefault().StartsWith("-"))
             {
-                Name = listParameters.FirstOrDefault();
-                listParameters.RemoveAt(0);
+                Name = GetOptionParameter(listParameters);
             }
 
             while (listParameters.Count > 0)
@@ -929,10 +927,10 @@ namespace TioRAC.DosBox.Process
         /// <returns>DosBox object with parameters</returns>
         public static DosBoxParameters FromString(string parameters)
         {
-            var myArguments = new DosBoxParameters();
-            myArguments.CastString(parameters);
+            var dosboxParameters = new DosBoxParameters();
+            dosboxParameters.CastString(parameters);
 
-            return myArguments;
+            return dosboxParameters;
         }
 
         /// <summary>

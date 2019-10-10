@@ -16,8 +16,8 @@ namespace TioRAC.DosBoxTest.ProcessTest
         [Test]
         public void ToStringTest()
         {
-            var parameter = DosBoxParameters.New()
-                .AddName("jogo.exe")
+            var parameter = DosBoxParameters.Create()
+                .AddName("game.exe")
                 .AddExit()
                 .AddCommand("dir pasta")
                 .AddFullscreen()
@@ -40,13 +40,13 @@ namespace TioRAC.DosBoxTest.ProcessTest
                 .AddSocket();
 
             Assert.AreEqual(parameter.ToString(),
-                "jogo.exe -exit -c \"dir pasta\" -fullscreen -userconf -conf \"jogo.conf\" -lang \"lang.conf\" -machine cga -noconsole -startmapper -noautoexec -securemode -scaler -forcescaler -version -editconf \"myEditConfig\" -opencaptures capture -printconf -resetconf -resetmapper -socket");
+                "\"game.exe\" -exit -c \"dir pasta\" -fullscreen -userconf -conf \"jogo.conf\" -lang \"lang.conf\" -machine cga -noconsole -startmapper -noautoexec -securemode -scaler -forcescaler -version -editconf \"myEditConfig\" -opencaptures \"capture\" -printconf -resetconf -resetmapper -socket");
         }
 
         [Test]
         public void FromString()
         {
-            var parameters = "jogo.exe -exit -c \"dir pasta\" -fullscreen -userconf -conf jogo.conf -lang lang.conf -machine cga -noconsole -startmapper -noautoexec -securemode -scaler -forcescaler -version -editconf myEditConfig -opencaptures capture -printconf -resetconf -resetmapper -socket";
+            var parameters = "game.exe -exit -c \"dir pasta\" -fullscreen -userconf -conf jogo.conf -lang lang.conf -machine cga -noconsole -startmapper -noautoexec -securemode -scaler -forcescaler -version -editconf myEditConfig -opencaptures capture -printconf -resetconf -resetmapper -socket";
             var test = DosBoxParameters.FromString(parameters);
 
             Assert.IsTrue(test.Exit);
@@ -69,7 +69,7 @@ namespace TioRAC.DosBoxTest.ProcessTest
             Assert.Contains("lang.conf", test.Languages);
             Assert.Contains("myEditConfig", test.EditConfs);
 
-            Assert.AreEqual(test.Name, "jogo.exe");
+            Assert.AreEqual(test.Name, "game.exe");
             Assert.AreEqual(test.Machine, "cga");
             Assert.AreEqual(test.OpenCaptures, "capture");
         }
@@ -77,7 +77,7 @@ namespace TioRAC.DosBoxTest.ProcessTest
         [Test]
         public void CastTest()
         {
-            string startParameters = "jogo.exe -exit -c \"dir pasta\" -fullscreen -userconf -conf jogo.conf -lang lang.conf -machine cga -noconsole -startmapper -noautoexec -securemode -scaler -forcescaler -version -editconf myEditConfig -opencaptures capture -printconf -resetconf -resetmapper -socket";
+            string startParameters = "\"c:\\Program Files\\game\\game.exe\" -exit -c \"dir pasta\" -fullscreen -userconf -conf \"jogo.conf\" -lang \"lang.conf\" -machine cga -noconsole -startmapper -noautoexec -securemode -scaler -forcescaler -version -editconf \"myEditConfig\" -opencaptures \"capture\" -printconf -resetconf -resetmapper -socket";
             DosBoxParameters dosBoxParameters = startParameters;
             string endParameters = dosBoxParameters;
 
