@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace TioRAC.DosBox.Process
+namespace TioRAC.DosBox
 {
     public class DosBoxProcess : IDisposable
     {
@@ -46,9 +46,7 @@ namespace TioRAC.DosBox.Process
             }
         }
 
-        public System.Diagnostics.Process RuntimeProcess { get; protected set; }
-
-        protected TaskCompletionSource<object> TaskCompletion { get; set; }
+        protected Process RuntimeProcess { get; set; }
 
         #endregion "Properties"
 
@@ -58,11 +56,12 @@ namespace TioRAC.DosBox.Process
         {
             RuntimeProcess = new System.Diagnostics.Process
             {
-                StartInfo = CreateStartInfo()
+                StartInfo = CreateStartInfo(),
             };
 
             RuntimeProcess.EnableRaisingEvents = true;
             RuntimeProcess.Exited += RuntimeProcessExited;
+            
             RuntimeProcess.Start();
         }
 
@@ -71,13 +70,12 @@ namespace TioRAC.DosBox.Process
             return new ProcessStartInfo
             {
                 FileName = FileName,
-                Arguments = Parameters,
+                Arguments = Parameters
             };
         }
 
         private void RuntimeProcessExited(object sender, EventArgs e)
         {
-            TaskCompletion?.TrySetResult(null);
             Stop();
         }
 
@@ -90,24 +88,12 @@ namespace TioRAC.DosBox.Process
                 RuntimeProcess.Dispose();
                 RuntimeProcess = null;
             }
-
-            if (TaskCompletion != null)
-                TaskCompletion = null;
         }
 
-        public Task WaitEndDosBox(CancellationToken cancellationToken = default)
+        public void WaitEndDosBox()
         {
             if (IsRunning)
-            {
-                TaskCompletion = new TaskCompletionSource<object>();
-
-                if (cancellationToken != default)
-                    cancellationToken.Register(TaskCompletion.SetCanceled);
-
-                return TaskCompletion.Task;
-            }
-
-            return Task.CompletedTask;
+                RuntimeProcess.WaitForExit();
         }
 
         #endregion "Process Control"

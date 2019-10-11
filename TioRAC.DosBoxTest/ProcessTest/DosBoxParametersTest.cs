@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
-using TioRAC.DosBox.Process;
+using TioRAC.DosBox;
 
 namespace TioRAC.DosBoxTest.ProcessTest
 {

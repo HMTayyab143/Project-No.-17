@@ -8,4 +8,8 @@
     <DocumentationFile>C:\ProjetosGIT\dosbox-lib\TioRAC.DosBox\TioRAC.DosBox.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Process\" />
+  </ItemGroup>
+
 </Project>
