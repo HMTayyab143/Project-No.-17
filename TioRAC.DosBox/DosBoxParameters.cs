@@ -68,7 +68,7 @@ namespace TioRAC.DosBox
         /// <para>If name is a directory, DOSBox will mount the specified directory as the C drive.</para>
         /// <para>If name is an executable, DOSBox will mount the directory of name as the C drive, and start executing name.</para>
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public string Name
         {
             get
@@ -85,7 +85,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// DOSBox will close itself when the DOS application name ends. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool Exit
         {
             get
@@ -102,7 +102,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Runs the specified command before running name. Multiple commands can be specified. Each command should start with -c though. A command can be: an Internal Program, a DOS command or an executable on a mounted drive. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public ObservableCollection<string> Commands
         {
             get
@@ -119,7 +119,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Starts DOSBox in fullscreen mode. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool Fullscreen
         {
             get
@@ -136,7 +136,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Load the configuration from the user's profile or home directory. This is the default behavior, so this switch is useful when using -conf, below. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool UserConf
         {
             get
@@ -153,7 +153,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Load the config file specified in configfilelocation. Useful for specifying particular options for specific games. If used after -userconf, or if you use multiple -conf switches, options present in multiple configs will be overwritten by the last, except for autoexec entries, which will be appended in order. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public ObservableCollection<string> Configurations
         {
             get
@@ -170,7 +170,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Start DOSBox using the language string specified in languagefilelocation. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public ObservableCollection<string> Languages
         {
             get
@@ -187,7 +187,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Setup DOSBox to emulate a specific type of machine. Valid choices are: hercules, cga, ega, pcjr, tandy, svga_s3 (default) as well as the additional svga chipsets listed in the DOSBox configuration file. The machinetype affects the video card and the available sound cards. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public string Machine
         {
             get
@@ -204,7 +204,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Start DOSBox without showing the console window, output will be redirected to stdout.txt and stderr.txt. This is useful if DOSBox crashes, since the error messages stored in stdout.txt and stderr.txt may help the developers fixing the problem. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool NoConsole
         {
             get
@@ -221,7 +221,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Enter the mapper directly on startup. Useful for people with keyboard or joystick problems. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool StartMapper
         {
             get
@@ -238,7 +238,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Skips the [autoexec] section of the loaded configuration file. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool NoAutoexec
         {
             get
@@ -255,7 +255,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Same as -noautoexec, but adds config.com -securemode at the bottom of AUTOEXEC.BAT (which in turn disables any changes to how the drives are mounted inside DOSBox). 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool SecureMode
         {
             get
@@ -272,7 +272,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Uses the scaler specified by "scaler". See the DOSBox configuration file for the available scalers.
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool Scaler
         {
             get
@@ -289,7 +289,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// Similar to the -scaler parameter, but tries to force usage of the specified scaler even if it might not fit.
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool ForceScaler
         {
             get
@@ -306,7 +306,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// output version information and exit. (see stdout.txt) Useful for frontends. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool Version
         {
             get
@@ -323,7 +323,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// calls program with as first parameter the configuration file. You can specify this command more than once. In this case it will move to second program if the first one fails to start. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public ObservableCollection<string> EditConfs
         {
             get
@@ -340,7 +340,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// calls program with as first parameter the location of the captures folder. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public string OpenCaptures
         {
             get
@@ -357,7 +357,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// prints the location of the default configuration file. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool PrintConf
         {
             get
@@ -371,11 +371,10 @@ namespace TioRAC.DosBox
             }
         }
 
-
         /// <summary>
         /// removes the default configuration file. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool ResetConf
         {
             get
@@ -392,7 +391,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// removes the mapperfile used by the default clean configuration file. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool ResetMapper
         {
             get
@@ -409,7 +408,7 @@ namespace TioRAC.DosBox
         /// <summary>
         /// passes the socket number to the nullmodem emulation. 
         /// </summary>
-        [MinDosBox("0.74")]
+        [DosBoxVersion(DosBoxVersion.Official0_74)]
         public bool Socket
         {
             get

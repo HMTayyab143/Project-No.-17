@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Process\" />
+    <Compile Remove="Process\**" />
+    <EmbeddedResource Remove="Process\**" />
+    <None Remove="Process\**" />
   </ItemGroup>
 
 </Project>

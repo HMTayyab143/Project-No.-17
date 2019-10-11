@@ -4,17 +4,17 @@ using System.Text;
 using NUnit.Framework;
 using TioRAC.DosBox;
 
-namespace TioRAC.DosBoxTest.ProcessTest
+namespace TioRAC.DosBoxTest
 {
     public class DosBoxProcessTest
     {
-        [Test]
+        /*[Test]
         public void Bla()
         {
             var p = new DosBoxProcess("ping.exe");
             p.Start();
             p.WaitEndDosBox();
 
-        }
+        }*/
     }
 }

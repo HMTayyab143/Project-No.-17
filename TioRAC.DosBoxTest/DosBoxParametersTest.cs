@@ -4,7 +4,7 @@ using System.Text;
 using NUnit.Framework;
 using TioRAC.DosBox;
 
-namespace TioRAC.DosBoxTest.ProcessTest
+namespace TioRAC.DosBoxTest
 {
     public class DosBoxParametersTest
     {
