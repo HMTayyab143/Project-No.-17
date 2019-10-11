@@ -338,6 +338,63 @@
             </summary>
             <param name="parameters">DosBox Parameters</param>
         </member>
+        <member name="T:TioRAC.DosBox.DosBoxProcess">
+            <summary>
+            Dosbox Process Control
+            </summary>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxProcess.#ctor">
+            <summary>
+            Create Dosbox Process Control
+            </summary>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxProcess.#ctor(System.String)">
+            <summary>
+            Dosbox Process Control with file name of dosbox application
+            </summary>
+            <param name="fileName">DosBox application file name</param>
+        </member>
+        <member name="P:TioRAC.DosBox.DosBoxProcess.FileName">
+            <summary>
+            DosBox application file name
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.DosBoxProcess.Parameters">
+            <summary>
+            Parameters to start dosbox application
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.DosBoxProcess.IsRunning">
+            <summary>
+            Informs if the dosbox is running
+            </summary>
+        </member>
+        <member name="P:TioRAC.DosBox.DosBoxProcess.RuntimeProcess">
+            <summary>
+            Process of DosBox Application
+            </summary>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxProcess.Start">
+            <summary>
+            Start DosBox application
+            </summary>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxProcess.CreateStartInfo">
+            <summary>
+            Create start info for process
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxProcess.Stop">
+            <summary>
+            Stop DosBox application
+            </summary>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxProcess.WaitEndDosBox">
+            <summary>
+            Wait DosBox end application
+            </summary>
+        </member>
         <member name="T:TioRAC.DosBox.DosBoxVersion">
             <summary>
             DosBox version (future use)

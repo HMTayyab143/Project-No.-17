@@ -8,13 +8,15 @@ namespace TioRAC.DosBoxTest
 {
     public class DosBoxProcessTest
     {
-        /*[Test]
-        public void Bla()
+        [Test]
+        public void IsRunning()
         {
-            var p = new DosBoxProcess("ping.exe");
-            p.Start();
-            p.WaitEndDosBox();
+            using var dosBoxProcess = new DosBoxProcess
+            {
+                FileName = "dosbox.exe"
+            };;
 
-        }*/
+            Assert.IsFalse(dosBoxProcess.IsRunning);
+        }
     }
 }
