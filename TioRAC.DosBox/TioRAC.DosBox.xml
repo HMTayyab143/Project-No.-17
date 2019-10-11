@@ -395,6 +395,47 @@
             Wait DosBox end application
             </summary>
         </member>
+        <member name="T:TioRAC.DosBox.DosBoxStarter">
+            <summary>
+            Easy start DosBox
+            </summary>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxStarter.#ctor(System.String)">
+            <summary>
+            Create DosBox launcher 
+            </summary>
+            <param name="filename">DosBox application file name</param>
+        </member>
+        <member name="P:TioRAC.DosBox.DosBoxStarter.Process">
+            <summary>
+            Process to start dosbox application
+            </summary>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxStarter.FromProcess(System.String)">
+            <summary>
+            Create DosBox launcher
+            </summary>
+            <param name="filename">DosBox application file name</param>
+            <returns>DosBox launcher</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxStarter.SetParameters(System.Action{TioRAC.DosBox.DosBoxParameters})">
+            <summary>
+            Edit DosBox application startup parameters 
+            </summary>
+            <param name="parameters">DosBox Parameters</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxStarter.Start">
+            <summary>
+            Start DosBox application
+            </summary>
+            <returns>Process of DosBox Application</returns>
+        </member>
+        <member name="M:TioRAC.DosBox.DosBoxStarter.StartAndWait">
+            <summary>
+            Start and wait for end DosBox Application
+            </summary>
+        </member>
         <member name="T:TioRAC.DosBox.DosBoxVersion">
             <summary>
             DosBox version (future use)
