@@ -10,6 +10,8 @@ namespace TioRAC.DosBox.Options
     /// </summary>
     public static class SimpleIniParse
     {
+        #region "Create Ini"
+
         /// <summary>
         /// Create ini line with data with StringBuilder class
         /// </summary>
@@ -57,6 +59,10 @@ namespace TioRAC.DosBox.Options
         {
             return Enum.GetName(value.GetType(), value).ToLower();
         }
+
+        #endregion "Create Ini"
+
+        #region "Get Values"
 
         /// <summary>
         /// Get boolean value
@@ -111,10 +117,16 @@ namespace TioRAC.DosBox.Options
             if (value is T)
                 return (T)value;
 
-            if (Enum.TryParse<T>(value.ToString(), out T result))
+            if (Enum.TryParse<T>(value.ToString(), true, out T result))
                 return result;
 
             return null;
         }
+
+        #endregion "Get Values"
+
+        #region "Read Ini"
+
+        #endregion "Read Ini"
     }
 }

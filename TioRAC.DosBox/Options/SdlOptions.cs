@@ -475,9 +475,9 @@ namespace TioRAC.DosBox.Options
                         break;
 
                     case "priority":
-                        if (data.Value is IList<object> priority && priority.Count > 0)
+                        if (data.Value is System.Collections.IList priority && priority.Count > 0)
                         {
-                            PriorityFocused = SimpleIniParse.GetEnum<PriorityLevel>(priority[0]);
+                            PriorityFocused = SimpleIniParse.GetEnum<PriorityLevel>(priority [0]);
 
                             if (priority.Count > 1)
                                 PriorityMinimized = SimpleIniParse.GetEnum<PriorityLevel>(priority[1]);
