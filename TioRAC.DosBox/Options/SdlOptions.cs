@@ -402,5 +402,102 @@ namespace TioRAC.DosBox.Options
         }
 
         #endregion "Fluent"
+
+        #region "String"
+
+        /// <summary>
+        /// Cast SDL options to string
+        /// </summary>
+        /// <returns>String in INI format</returns>
+        public override string ToString()
+        {
+            var options = new StringBuilder(base.ToString());
+
+            options.CreateIniLine("fullscreen", FullScreen);
+            options.CreateIniLine("fulldouble", FullDouble);
+            options.CreateIniLine("fullresolution", FullResolution);
+            options.CreateIniLine("windowresolution", WindowResolution);
+            options.CreateIniLine("output", Output);
+            options.CreateIniLine("autolock", AutoLock);
+            options.CreateIniLine("sensitivity", Sensitivity);
+            options.CreateIniLine("waitonerror", WaitOnError);
+            options.CreateIniLine("priority", PriorityFocused, PriorityMinimized);
+            options.CreateIniLine("mapperfile", MapperFile);
+            options.CreateIniLine("usescancodes", UseScanCodes);
+
+            return options.ToString();
+        }
+
+        #endregion "String"
+
+        #region "BaseOptions"
+
+        /// <summary>
+        /// Load SDL options values from dictonary
+        /// </summary>
+        /// <param name="dictionary">Dictonary with options SDL data</param>
+        public override void LoadDictonary(IDictionary<string, object> dictionary)
+        {
+            foreach (var data in dictionary)
+            {
+                switch (data.Key)
+                {
+                    case "fullscreen":
+                        FullScreen = SimpleIniParse.GetBool(data.Value);
+                        break;
+
+                    case "fulldouble":
+                        FullDouble = SimpleIniParse.GetBool(data.Value);
+                        break;
+
+                    case "fullresolution":
+                        FullResolution = (Resolution)data.Value.ToString();
+                        break;
+
+                    case "windowresolution":
+                        WindowResolution = (Resolution)data.Value.ToString();
+                        break;
+
+                    case "output":
+                        Output = SimpleIniParse.GetEnum<VideoOutput>(data.Value);
+                        break;
+
+                    case "autolock":
+                        AutoLock = SimpleIniParse.GetBool(data.Value);
+                        break;
+
+                    case "sensitivity":
+                        Sensitivity = SimpleIniParse.GetInt(data.Value);
+                        break;
+
+                    case "waitonerror":
+                        WaitOnError = SimpleIniParse.GetBool(data.Value);
+                        break;
+
+                    case "priority":
+                        if (data.Value is IList<object> priority && priority.Count > 0)
+                        {
+                            PriorityFocused = SimpleIniParse.GetEnum<PriorityLevel>(priority[0]);
+
+                            if (priority.Count > 1)
+                                PriorityMinimized = SimpleIniParse.GetEnum<PriorityLevel>(priority[1]);
+                        }
+                        break;
+
+                    case "mapperfile":
+                        MapperFile = data.Value?.ToString();
+                        break;
+
+                    case "usescancodes":
+                        UseScanCodes = SimpleIniParse.GetBool(data.Value);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+
+        #endregion "BaseOptions"
     }
 }

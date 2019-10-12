@@ -81,9 +81,19 @@ namespace TioRAC.DosBox.Options
             if (string.IsNullOrWhiteSpace(SectionName))
                 return "";
             
-            return $"[{SectionName}]\n\n";
+            return $"[{SectionName}]\r\n\r\n";
         }
 
         #endregion "Cast String"
+
+        #region "abstract"
+
+        /// <summary>
+        /// Load options values from dictonary
+        /// </summary>
+        /// <param name="dictionary">Dictonary with options data</param>
+        public abstract void LoadDictonary(IDictionary<string, object> dictionary);
+
+        #endregion "abstract"
     }
 }
