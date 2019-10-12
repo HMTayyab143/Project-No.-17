@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TioRAC.DosBox.Options
 {
@@ -20,6 +18,7 @@ namespace TioRAC.DosBox.Options
         {
             Width = width;
             Height = height;
+            Type = null;
         }
 
         /// <summary>
@@ -32,19 +31,47 @@ namespace TioRAC.DosBox.Options
             if (resolution == null)
                 throw new NullReferenceException("Resolution argument is not a resolution. Example:\"800x600\"");
 
-            var parts = resolution.Trim().Split('x');
+            if (resolution?.ToLower() == "original")
+            {
+                Width = null;
+                Height = null;
+                Type = ResolutionType.Original;
+            }
+            else if (resolution?.ToLower() == "desktop")
+            {
+                Width = null;
+                Height = null;
+                Type = ResolutionType.Desktop;
+            }
+            else
+            {
+                Type = null;
 
-            if (parts.Length < 2 || parts.Length > 3)
-                throw new NotSupportedException("String is not a resolution. Example:\"800x600\"");
+                var parts = resolution.Trim().Split('x');
 
-            if (!UInt32.TryParse(parts[0], out uint size))
-                throw new NotSupportedException("String is not a resolution. Example:\"800x600\"");
+                if (parts.Length < 2 || parts.Length > 3)
+                    throw new NotSupportedException("String is not a resolution. Example:\"800x600\"");
 
-            Width = size;
-            if (!UInt32.TryParse(parts[1], out size))
-                throw new NotSupportedException("String is not a resolution. Example:\"800x600\"");
+                if (!UInt32.TryParse(parts[0], out uint size))
+                    throw new NotSupportedException("String is not a resolution. Example:\"800x600\"");
 
-            Height = size;
+                Width = size;
+                if (!UInt32.TryParse(parts[1], out size))
+                    throw new NotSupportedException("String is not a resolution. Example:\"800x600\"");
+
+                Height = size;
+            }
+        }
+
+        /// <summary>
+        /// Create resolution from Type
+        /// </summary>
+        /// <param name="type">Resolution type, Original ou Desktop</param>
+        public Resolution(ResolutionType type)
+        {
+            Type = type;
+            Width = null;
+            Height = null;
         }
 
         #endregion "Constructions"
@@ -54,12 +81,17 @@ namespace TioRAC.DosBox.Options
         /// <summary>
         /// Width size
         /// </summary>
-        public uint Width { get; set; }
+        public uint? Width { get; private set; }
 
         /// <summary>
         /// Height size
         /// </summary>
-        public uint Height { get; set; }
+        public uint? Height { get; private set; }
+
+        /// <summary>
+        /// Type resolution, Desktop or Original
+        /// </summary>
+        public ResolutionType? Type { get; private set; }
 
         #endregion "Properties"
 
@@ -71,10 +103,21 @@ namespace TioRAC.DosBox.Options
         /// <returns>String of resolution, example 800x600</returns>
         public override string ToString()
         {
-            if (Width == 0 || Height == 0)
-                return "";
+            if (Type.HasValue)
+            {
+                return Enum.GetName(typeof(ResolutionType), Type).ToLower();
+            }
+            else if (Width.HasValue && Height.HasValue)
+            {
+                if (Width == 0 || Height == 0)
+                    return "";
 
-            return $"{Width}x{Height}";
+                return $"{Width}x{Height}";
+            }
+            else
+            {
+                return "";
+            }
         }
 
         /// <summary>
@@ -97,6 +140,26 @@ namespace TioRAC.DosBox.Options
         }
 
         #endregion "String Casts"
+
+        #region "ResolutionType"
+
+        /// <summary>
+        /// Resolution type for DosBox
+        /// </summary>
+        public enum ResolutionType
+        {
+            /// <summary>
+            /// Uses resolution of running DOS application
+            /// </summary>
+            Original,
+
+            /// <summary>
+            /// Use your desktop resolution
+            /// </summary>
+            Desktop
+        }
+
+        #endregion "FullResolutionType"
 
         #region "Resolutions"
 
@@ -153,6 +216,16 @@ namespace TioRAC.DosBox.Options
         /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
         /// </summary>
         public static Resolution XGA => new Resolution(1024, 768);
+
+        /// <summary>
+        /// <para>Resolution from your Desktop</para>
+        /// </summary>
+        public static Resolution Desktop => new Resolution(ResolutionType.Desktop);
+
+        /// <summary>
+        /// <para>Resolution from dos application is running.</para>
+        /// </summary>
+        public static Resolution Original => new Resolution(ResolutionType.Original);
 
         #endregion "Resolutions"
     }

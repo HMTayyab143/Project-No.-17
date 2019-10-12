@@ -14,6 +14,9 @@ namespace TioRAC.DosBoxTest.Options
 
             resolution = Resolution.SVGA;
             Assert.AreEqual(resolution.ToString(), "800x600");
+
+            resolution = new Resolution(Resolution.ResolutionType.Desktop);
+            Assert.AreEqual(resolution.ToString(), "desktop");
         }
 
         [Test]

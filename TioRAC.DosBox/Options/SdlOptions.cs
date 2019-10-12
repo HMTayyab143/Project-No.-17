@@ -17,7 +17,7 @@ namespace TioRAC.DosBox.Options
 
         private bool? _fullscreen;
         private bool? _fulldouble;
-        private FullResolution? _fullResolution;
+        private Resolution? _fullResolution;
         private Resolution? _windowResolution;
         private VideoOutput? _output;
         private bool? _autoLock;
@@ -55,7 +55,7 @@ namespace TioRAC.DosBox.Options
             }
         }
 
-        public FullResolution? FullResolution
+        public Resolution? FullResolution
         {
             get
             {
