@@ -127,6 +127,95 @@ namespace TioRAC.DosBox.Options
 
         #region "Read Ini"
 
+        /// <summary>
+        /// Read a string in INI format and convert to dictionary
+        /// </summary>
+        /// <param name="iniOptions">string in INI format</param>
+        /// <returns>Dictionary</returns>
+        public static Dictionary<string, object> ReadIniOptions(string iniOptions)
+        {
+            var iniDictionary = new Dictionary<string, object>();
+            var sectionDictionary = iniDictionary;
+
+            if (!string.IsNullOrWhiteSpace(iniOptions))
+            {
+                var linesOptions = iniOptions.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None).ToList();
+
+                while (linesOptions.Count > 0)
+                {
+                    var line = linesOptions[0].Trim();
+
+                    if (CleanLineIniOptions(line))
+                    {
+                        if (TryGetSectionName(line, out string nameSection))
+                        {
+                            sectionDictionary = new Dictionary<string, object>();
+                            iniDictionary.Add(nameSection, sectionDictionary);
+                        }
+                        else if (TryGetKeyAndValue(line, out string key, out object value))
+                        {
+                            sectionDictionary.Add(key, value);
+                        }
+                        else
+                        {
+                            sectionDictionary.Add("content", string.Join("\n", linesOptions));
+                            linesOptions.Clear();
+                            linesOptions.Add(line);
+                        }
+                    }
+
+                    linesOptions.RemoveAt(0);
+                }
+            }
+
+            return iniDictionary;
+        }
+
+        private static bool CleanLineIniOptions(string line)
+        {
+            if (line.Contains('#'))
+                line = line.Substring(0, line.IndexOf('#'));
+
+            if (line.Contains(';'))
+                line = line.Substring(0, line.IndexOf(';'));
+
+            return !string.IsNullOrWhiteSpace(line);
+        }
+
+        private static bool TryGetSectionName(string line, out string nameSection)
+        {
+            if (line.StartsWith("[") && line.EndsWith("]"))
+            {
+                var index1 = line.IndexOf('[') + 1;
+                var index2 = line.IndexOf(']');
+                nameSection = line.Substring(index1, index2 - index1);
+                return true;
+            }
+
+            nameSection = null;
+            return false;
+        }
+
+        private static bool TryGetKeyAndValue(string line, out string key, out object value)
+        {
+            if (line.Contains("="))
+            {
+                var keyValue = line.Split('=');
+                key = keyValue[0].Trim();
+
+                if (keyValue[1].Contains(","))
+                    value = keyValue[1].Split(',').Select(a => a.Trim()).ToList();
+                else
+                    value = keyValue[1].Trim();
+
+                return true;
+            }
+
+            key = null;
+            value = null;
+            return false;
+        }
+
         #endregion "Read Ini"
     }
 }
