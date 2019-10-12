@@ -92,7 +92,7 @@ namespace TioRAC.DosBox.Options
         /// Load options values from dictonary
         /// </summary>
         /// <param name="dictionary">Dictonary with options data</param>
-        public abstract void LoadDictonary(IDictionary<string, object> dictionary);
+        public abstract void LoadDictionary(IDictionary<string, object> dictionary);
 
         #endregion "abstract"
     }

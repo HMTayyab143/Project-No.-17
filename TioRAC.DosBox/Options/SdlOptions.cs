@@ -436,7 +436,7 @@ namespace TioRAC.DosBox.Options
         /// Load SDL options values from dictonary
         /// </summary>
         /// <param name="dictionary">Dictonary with options SDL data</param>
-        public override void LoadDictonary(IDictionary<string, object> dictionary)
+        public override void LoadDictionary(IDictionary<string, object> dictionary)
         {
             foreach (var data in dictionary)
             {
