@@ -4,14 +4,29 @@ using System.Text;
 
 namespace TioRAC.DosBox.Options
 {
+    /// <summary>
+    /// Resolution dosbox will run. <a href="https://www.dosbox.com/wiki/Configuration:SDL">SDL</a> options.
+    /// </summary>
     public struct Resolution
     {
+        #region "Constructions"
+
+        /// <summary>
+        /// Create resolution options
+        /// </summary>
+        /// <param name="width">Width size</param>
+        /// <param name="height">Height size</param>
         public Resolution(uint width, uint height)
         {
             Width = width;
             Height = height;
         }
 
+        /// <summary>
+        /// Create resolution from string
+        /// </summary>
+        /// <exception cref="NotSupportedException">Resolution string is badly formatted</exception>
+        /// <param name="resolution">Resolution string, example 800x600</param>
         public Resolution(string resolution)
         {
             if (resolution == null)
@@ -32,10 +47,28 @@ namespace TioRAC.DosBox.Options
             Height = size;
         }
 
+        #endregion "Constructions"
+
+        #region "Properties"
+
+        /// <summary>
+        /// Width size
+        /// </summary>
         public uint Width { get; set; }
 
+        /// <summary>
+        /// Height size
+        /// </summary>
         public uint Height { get; set; }
 
+        #endregion "Properties"
+
+        #region "String Casts"
+
+        /// <summary>
+        /// Cast resolution to string
+        /// </summary>
+        /// <returns>String of resolution, example 800x600</returns>
         public override string ToString()
         {
             if (Width == 0 || Height == 0)
@@ -44,16 +77,28 @@ namespace TioRAC.DosBox.Options
             return $"{Width}x{Height}";
         }
 
+        /// <summary>
+        /// Implicit cast from Resolution to string
+        /// </summary>
+        /// <param name="resolution">Resolution struct</param>
         public static implicit operator string(Resolution resolution)
         {
             return resolution.ToString();
         }
 
+        /// <summary>
+        /// Explicit cast from string to Resolution struct
+        /// </summary>
+        /// <exception cref="NotSupportedException">Resolution string is badly formatted</exception>
+        /// <param name="resolution">Resolution string</param>
         public static explicit operator Resolution(string resolution)
         {
             return new Resolution(resolution);
         }
-        
+
+        #endregion "String Casts"
+
+        #region "Resolutions"
 
         public static Resolution CGA => new Resolution(320, 200);
 
@@ -72,5 +117,7 @@ namespace TioRAC.DosBox.Options
         public static Resolution SVGA => new Resolution(800, 600);
 
         public static Resolution XGA => new Resolution(1024, 768);
+
+        #endregion "Resolutions"
     }
 }

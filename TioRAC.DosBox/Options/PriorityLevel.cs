@@ -5,7 +5,7 @@ using System.Text;
 namespace TioRAC.DosBox.Options
 {
     /// <summary>
-    ///  Priority level for DosBox in <a href="https://www.dosbox.com/wiki/Dosbox.conf#.5Bsdl.5D">SDL</a> options
+    ///  Priority level for DosBox in <a href="https://www.dosbox.com/wiki/Configuration:SDL">SDL</a> options
     /// </summary>
     public enum PriorityLevel
     {
