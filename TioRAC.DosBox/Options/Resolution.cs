@@ -100,22 +100,58 @@ namespace TioRAC.DosBox.Options
 
         #region "Resolutions"
 
+        /// <summary>
+        /// <para>Resolution from CGA format: 320x200.</para>
+        /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+        /// </summary>
         public static Resolution CGA => new Resolution(320, 200);
 
+        /// <summary>
+        /// <para>Resolution from WVGA format: 800x400.</para>
+        /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+        /// </summary>
         public static Resolution WVGA => new Resolution(800, 480);
 
+        /// <summary>
+        /// <para>Resolution from FWVGA format: 854x480.</para>
+        /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+        /// </summary>
         public static Resolution FWVGA => new Resolution(854, 480);
 
-        public static Resolution WSVGA => new Resolution(854, 480);
+        /// <summary>
+        /// <para>Resolution from WSVGA format: 1024x600.</para>
+        /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+        /// </summary>
+        public static Resolution WSVGA => new Resolution(1024, 600);
 
+        /// <summary>
+        /// <para>Resolution from QVGA format: 320x240.</para>
+        /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+        /// </summary>
         public static Resolution QVGA => new Resolution(320, 240);
 
+        /// <summary>
+        /// <para>Resolution from VGA format: 640x480.</para>
+        /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+        /// </summary>
         public static Resolution VGA => new Resolution(640, 480);
-        
+
+        /// <summary>
+        /// <para>Resolution from PAL format: 768x576.</para>
+        /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+        /// </summary>
         public static Resolution PAL => new Resolution(768, 576);
 
+        /// <summary>
+        /// <para>Resolution from SVGA format: 800x600.</para>
+        /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+        /// </summary>
         public static Resolution SVGA => new Resolution(800, 600);
 
+        /// <summary>
+        /// <para>Resolution from XGA format: 1024x768.</para>
+        /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+        /// </summary>
         public static Resolution XGA => new Resolution(1024, 768);
 
         #endregion "Resolutions"
