@@ -103,6 +103,25 @@ namespace TioRAC.DosBox.Options
         }
 
         /// <summary>
+        /// Get unsigned integer value
+        /// </summary>
+        /// <param name="value">Object uint value</param>
+        /// <returns>uint value</returns>
+        public static uint? GetUInt(object value)
+        {
+            if (value == null)
+                return null;
+
+            if (value is uint)
+                return (uint)value;
+
+            if (uint.TryParse(value.ToString(), out uint result))
+                return result;
+
+            return null;
+        }
+
+        /// <summary>
         /// Get enumerator value
         /// </summary>
         /// <typeparam name="T">Enumerator type</typeparam>

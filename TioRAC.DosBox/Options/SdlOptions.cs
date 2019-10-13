@@ -261,7 +261,7 @@ namespace TioRAC.DosBox.Options
         /// <summary>
         /// Create a new SDL Options for DosBox configuration
         /// </summary>
-        /// <returns></returns>
+        /// <returns>DosBox SDL configuration to add another configuration</returns>
         public static SdlOptions Create()
         {
             return new SdlOptions();
@@ -433,9 +433,9 @@ namespace TioRAC.DosBox.Options
         #region "BaseOptions"
 
         /// <summary>
-        /// Load SDL options values from dictonary
+        /// Load SDL options values from dictionary
         /// </summary>
-        /// <param name="dictionary">Dictonary with options SDL data</param>
+        /// <param name="dictionary">Dictionary with options SDL data</param>
         public override void LoadDictionary(IDictionary<string, object> dictionary)
         {
             foreach (var data in dictionary)
