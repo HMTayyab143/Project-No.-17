@@ -136,6 +136,19 @@ namespace TioRAC.DosBox.Options
             if (value is T)
                 return (T)value;
 
+            var fields = typeof(T).GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+
+            foreach (var field in fields)
+            {
+                if (field.Name.ToLower() == value.ToString())
+                    return (T)field.GetValue(null);
+
+                var attribute = Attribute.GetCustomAttribute(field, typeof(System.ComponentModel.DescriptionAttribute)) as System.ComponentModel.DescriptionAttribute;
+
+                if ((attribute != null) && attribute.Description.ToLower() == value.ToString())
+                    return (T)field.GetValue(null);
+            }
+
             if (Enum.TryParse<T>(value.ToString(), true, out T result))
                 return result;
 

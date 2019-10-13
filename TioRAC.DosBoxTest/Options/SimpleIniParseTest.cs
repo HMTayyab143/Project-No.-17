@@ -63,5 +63,15 @@ namespace TioRAC.DosBoxTest.Options
             var autoexec = result["autoexec"] as Dictionary<string, object>;
             Assert.IsTrue(autoexec.ContainsKey("content"));
         }
+
+        [Test]
+        public void GetEnumTest()
+        {
+            var normal2x = SimpleIniParse.GetEnum<ScalerType>("normal2x");
+            var twoxSai = SimpleIniParse.GetEnum<ScalerType>("2xsai");
+
+            Assert.AreEqual(normal2x, ScalerType.Normal2x);
+            Assert.AreEqual(twoxSai, ScalerType.TwoxSai);
+        }
     }
 }
