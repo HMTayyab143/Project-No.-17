@@ -167,7 +167,7 @@ namespace TioRACLab.DosBox.Options
         /// <para>Resolution from CGA format: 320x200.</para>
         /// <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
         /// </summary>
-        public static Resolution CGA => new Resolution(320, 200);
+        public static Resolution CGA = (Resolution)"320x200";
 
         /// <summary>
         /// <para>Resolution from WVGA format: 800x400.</para>

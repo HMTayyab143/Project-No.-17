@@ -294,7 +294,7 @@ namespace TioRACLab.DosBox.Options
         /// </summary>
         /// <param name="resolution">Resolution the application</param>
         /// <returns>DosBox SDL configuration to add another configuration</returns>
-        public SdlOptions AddFullResolution(Resolution? resolution)
+        public SdlOptions AddFullResolution(Resolution? resolution = null)
         {
             FullResolution = resolution;
             return this;
