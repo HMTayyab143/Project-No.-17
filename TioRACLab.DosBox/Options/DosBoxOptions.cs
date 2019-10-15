@@ -165,7 +165,7 @@ namespace TioRACLab.DosBox.Options
         /// <summary>
         /// Cast DosBox options to string
         /// </summary>
-        /// <returns></returns>
+        /// <returns>DosBox options ini format</returns>
         public override string ToString()
         {
             var options = new StringBuilder(base.ToString());
