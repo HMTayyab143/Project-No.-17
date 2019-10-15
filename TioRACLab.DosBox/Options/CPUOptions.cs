@@ -183,7 +183,7 @@ namespace TioRACLab.DosBox.Options
         /// <returns>CPU options to add another configuration</returns>
         public CPUOptions AddCycleDown(uint? cycledown = 20)
         {
-            CycleUp = cycledown;
+            CycleDown = cycledown;
             return this;
         }
 

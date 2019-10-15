@@ -28,18 +28,19 @@ namespace TioRACLab.DosBox.Options
         {
             if (cycles == null || cycles.ToLower() == "auto")
                 Cycles = 0;
-
-            if (cycles.ToLower() == "max")
+            else if (cycles.ToLower() == "max")
                 Cycles = uint.MaxValue;
-
-            var fixedValue = cycles.Replace("fixed", "").Trim();
-
-            if (uint.TryParse(fixedValue, out uint result))
+            else
             {
-                Cycles = result;
-            }
+                var fixedValue = cycles.Replace("fixed", "").Trim();
 
-            throw new NotSupportedException("String is not a CPU Cycles");
+                if (uint.TryParse(fixedValue, out uint result))
+                {
+                    Cycles = result;
+                }
+                else
+                    throw new NotSupportedException("String is not a CPU Cycles");
+            }
         }
 
         #endregion "Constructions"
@@ -203,5 +204,12 @@ namespace TioRACLab.DosBox.Options
         }
 
         #endregion "UInt Cast"
+
+        #region "CPUCycles Consts"
+
+        public static CPUCycles AUTO = new CPUCycles(0);
+        public static CPUCycles MAX = new CPUCycles(uint.MaxValue);
+
+        #endregion "CPUCycles Consts"
     }
 }
