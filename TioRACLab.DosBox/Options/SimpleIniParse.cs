@@ -57,7 +57,14 @@ namespace TioRACLab.DosBox.Options
 
         private static string ParseEnum(object value)
         {
-            return Enum.GetName(value.GetType(), value).ToLower();
+            var name = Enum.GetName(value.GetType(), value);
+
+            var attribute = Attribute.GetCustomAttribute(value.GetType().GetField(name), typeof(System.ComponentModel.DescriptionAttribute)) as System.ComponentModel.DescriptionAttribute;
+
+            if (!string.IsNullOrWhiteSpace(attribute?.Description))
+                return attribute.Description.ToLower();
+
+            return name.ToLower();
         }
 
         #endregion "Create Ini"

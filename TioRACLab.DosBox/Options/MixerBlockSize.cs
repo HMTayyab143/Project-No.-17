@@ -11,6 +11,18 @@ namespace TioRACLab.DosBox.Options
     public enum MixerBlockSize
     {
         /// <summary>
+        /// Block Size 256
+        /// </summary>
+        [Description("256")]
+        Block256,
+
+        /// <summary>
+        /// Block Size 512
+        /// </summary>
+        [Description("512")]
+        Block512,
+
+        /// <summary>
         /// Block Size 1024
         /// </summary>
         [Description("1024")]
@@ -32,18 +44,6 @@ namespace TioRACLab.DosBox.Options
         /// Block Size 8192
         /// </summary>
         [Description("8192")]
-        Block8192,
-
-        /// <summary>
-        /// Block Size 512
-        /// </summary>
-        [Description("512")]
-        Block512,
-
-        /// <summary>
-        /// Block Size 256
-        /// </summary>
-        [Description("256")]
-        Block256
+        Block8192
     }
 }
