@@ -1,0 +1,1857 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TioRACLab.DosBox</name>
+    </assembly>
+    <members>
+        <member name="T:TioRACLab.DosBox.DosBoxParameters">
+            <summary>
+            DosBox command line parameters see: <a href="https://www.dosbox.com/wiki/Usage">DosBox Wiki: Usage</a>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.#ctor">
+            <summary>
+            Create new instance to DosBoxParameters with parameters for DosBox application
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.#ctor(System.String)">
+            <summary>
+            Create new instance to DosBoxParameters with parameters for DosBox application
+            </summary>
+             <param name="name">Add parameter Name <seealso cref="P:TioRACLab.DosBox.DosBoxParameters.Name" /></param>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Name">
+            <summary>
+            <para>If name is a directory, DOSBox will mount the specified directory as the C drive.</para>
+            <para>If name is an executable, DOSBox will mount the directory of name as the C drive, and start executing name.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Exit">
+            <summary>
+            DOSBox will close itself when the DOS application name ends. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Commands">
+            <summary>
+            Runs the specified command before running name. Multiple commands can be specified. Each command should start with -c though. A command can be: an Internal Program, a DOS command or an executable on a mounted drive. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Fullscreen">
+            <summary>
+            Starts DOSBox in fullscreen mode. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.UserConf">
+            <summary>
+            Load the configuration from the user's profile or home directory. This is the default behavior, so this switch is useful when using -conf, below. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Configurations">
+            <summary>
+            Load the config file specified in configfilelocation. Useful for specifying particular options for specific games. If used after -userconf, or if you use multiple -conf switches, options present in multiple configs will be overwritten by the last, except for autoexec entries, which will be appended in order. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Languages">
+            <summary>
+            Start DOSBox using the language string specified in languagefilelocation. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Machine">
+            <summary>
+            Setup DOSBox to emulate a specific type of machine. Valid choices are: hercules, cga, ega, pcjr, tandy, svga_s3 (default) as well as the additional svga chipsets listed in the DOSBox configuration file. The machinetype affects the video card and the available sound cards. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.NoConsole">
+            <summary>
+            Start DOSBox without showing the console window, output will be redirected to stdout.txt and stderr.txt. This is useful if DOSBox crashes, since the error messages stored in stdout.txt and stderr.txt may help the developers fixing the problem. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.StartMapper">
+            <summary>
+            Enter the mapper directly on startup. Useful for people with keyboard or joystick problems. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.NoAutoexec">
+            <summary>
+            Skips the [autoexec] section of the loaded configuration file. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.SecureMode">
+            <summary>
+            Same as -noautoexec, but adds config.com -securemode at the bottom of AUTOEXEC.BAT (which in turn disables any changes to how the drives are mounted inside DOSBox). 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Scaler">
+            <summary>
+            Uses the scaler specified by "scaler". See the DOSBox configuration file for the available scalers.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.ForceScaler">
+            <summary>
+            Similar to the -scaler parameter, but tries to force usage of the specified scaler even if it might not fit.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Version">
+            <summary>
+            output version information and exit. (see stdout.txt) Useful for frontends. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.EditConfs">
+            <summary>
+            calls program with as first parameter the configuration file. You can specify this command more than once. In this case it will move to second program if the first one fails to start. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.OpenCaptures">
+            <summary>
+            calls program with as first parameter the location of the captures folder. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.PrintConf">
+            <summary>
+            prints the location of the default configuration file. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.ResetConf">
+            <summary>
+            removes the default configuration file. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.ResetMapper">
+            <summary>
+            removes the mapperfile used by the default clean configuration file. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxParameters.Socket">
+            <summary>
+            passes the socket number to the nullmodem emulation. 
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.Create">
+            <summary>
+            Create a new DosBox Parameters object
+            </summary>
+            <returns>New DosBox Parameters object</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.Create(System.String)">
+            <summary>
+            Create a new DosBox Parameters object
+            </summary>
+            <param name="name">Add parameter Name <seealso cref="P:TioRACLab.DosBox.DosBoxParameters.Name" /></param>
+            <returns>New DosBox Parameters object</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddName(System.String)">
+            <summary>
+            Add parameter name
+            </summary>
+            <param name="name">If name is a directory, DOSBox will mount the specified directory as the C drive.
+            If name is an executable, DOSBox will mount the directory of name as the C drive, and start executing name. </param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddExit">
+            <summary>
+            Add parameter: -exit
+            DOSBox will close itself when the DOS application name ends. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddCommand(System.String)">
+            <summary>
+            Add single parameter command
+            </summary>
+            <param name="command">Runs the specified command before running name.</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddFullscreen">
+            <summary>
+            Add parameter: -fullscreen
+            Starts DOSBox in fullscreen mode. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddUserConf">
+            <summary>
+            Add parameter: -userconf
+            -Load the configuration from the user's profile or home directory.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddConfiguration(System.String)">
+            <summary>
+            Add single parameter conf
+            </summary>
+            <param name="configuration">Load the config file specified.</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddLanguages(System.String)">
+            <summary>
+            Add single parameter lang 
+            </summary>
+            <param name="languages">Start DOSBox using the language string specified</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddMachine(System.String)">
+            <summary>
+            Add parameter: -machine
+            Setup DOSBox to emulate a specific type of machine.
+            </summary>
+            <param name="machine">Valid choices are: hercules, cga, ega, pcjr, tandy, svga_s3 (default)</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddNoConsole">
+            <summary>
+            Add parameter: -noconsole
+            Start DOSBox without showing the console window (Windows Only).
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddStartMapper">
+            <summary>
+            Add parameter: -startmapper
+            Enter the mapper directly on startup.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddNoAutoexec">
+            <summary>
+            Add parameter: -noautoexec
+            Skips the [autoexec] section of the loaded configuration file.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddSecureMode">
+            <summary>
+            Add parameter: -securemode
+            Same as -noautoexec, but adds config.com -securemode at the bottom of AUTOEXEC.BAT
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddScaler">
+            <summary>
+            Add parameter: -scaler
+            Uses the scaler specified by "scaler".
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddForceScaler">
+            <summary>
+            Add parameter: -forcescaler
+            Similar to the -scaler parameter, but tries to force usage of the specified scaler even if it might not fit.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddVersion">
+            <summary>
+            Add parameter: -version
+            output version information and exit.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddEditConf(System.String)">
+            <summary>
+            Add single parameter editconf 
+            </summary>
+            <param name="editConf">Calls program with as first parameter the configuration file.</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddOpenCaptures(System.String)">
+            <summary>
+            Add parameter: -opencaptures
+            Calls program with as first parameter the location of the captures folder. 
+            </summary>
+            <param name="openCaptures">Progam location</param>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddPrintConf">
+            <summary>
+            Add parameter: -printconf
+            Prints the location of the default configuration file. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddResetConf">
+            <summary>
+            Add parameter: -resetconf
+            Removes the default configuration file.
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddResetMapper">
+            <summary>
+            Add parameter: -resetmapper
+            Removes the mapperfile used by the default clean configuration file. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.AddSocket">
+            <summary>
+            Add parameter: -socket
+            Passes the socket number to the nullmodem emulation. 
+            </summary>
+            <returns>DosBox parameters to add another parameter</returns>
+        </member>
+        <member name="F:TioRACLab.DosBox.DosBoxParameters.PropertyChangedHandler">
+            <summary>
+            Handler Property Changed
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.OnPropertyChanged(System.String)">
+            <summary>
+            Notify Property Changed
+            </summary>
+            <param name="name">Name Property</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.ToString">
+            <summary>
+            Return string with parameters
+            </summary>
+            <returns>String with parameters</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.CastString(System.String)">
+            <summary>
+            Load parameters from string
+            </summary>
+            <param name="parameters">String with parameters</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.GetOptionParameter(System.Collections.Generic.List{System.String})">
+            <summary>
+            Get parameter options 
+            </summary>
+            <param name="listParameters">List parameters string split</param>
+            <returns>Parameter options</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.FromString(System.String)">
+            <summary>
+            Get DosBoxParameters from string with parameters
+            </summary>
+            <param name="parameters">String with parameters</param>
+            <returns>DosBox object with parameters</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.op_Implicit(TioRACLab.DosBox.DosBoxParameters)~System.String">
+            <summary>
+            Cast DosBox Parameters to string
+            </summary>
+            <param name="parameters">DosBox Parameters</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxParameters.op_Implicit(System.String)~TioRACLab.DosBox.DosBoxParameters">
+            <summary>
+            Cast string to DosBox Parameters
+            </summary>
+            <param name="parameters">DosBox Parameters</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.DosBoxProcess">
+            <summary>
+            Dosbox Process Control
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxProcess.#ctor">
+            <summary>
+            Create Dosbox Process Control
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxProcess.#ctor(System.String)">
+            <summary>
+            Dosbox Process Control with file name of dosbox application
+            </summary>
+            <param name="fileName">DosBox application file name</param>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxProcess.FileName">
+            <summary>
+            DosBox application file name
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxProcess.Parameters">
+            <summary>
+            Parameters to start dosbox application
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxProcess.IsRunning">
+            <summary>
+            Informs if the dosbox is running
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxProcess.RuntimeProcess">
+            <summary>
+            Process of DosBox Application
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxProcess.Start">
+            <summary>
+            Start DosBox application
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxProcess.CreateStartInfo">
+            <summary>
+            Create start info for process
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxProcess.Stop">
+            <summary>
+            Stop DosBox application
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxProcess.WaitEndDosBox">
+            <summary>
+            Wait DosBox end application
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.DosBoxStarter">
+            <summary>
+            Easy start DosBox
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.#ctor(System.String)">
+            <summary>
+            Create DosBox launcher 
+            </summary>
+            <param name="filename">DosBox application file name</param>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxStarter.Process">
+            <summary>
+            Process to start dosbox application
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.FromProcess(System.String)">
+            <summary>
+            Create DosBox launcher
+            </summary>
+            <param name="filename">DosBox application file name</param>
+            <returns>DosBox launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.SetParameters(System.Action{TioRACLab.DosBox.DosBoxParameters})">
+            <summary>
+            Edit DosBox application startup parameters 
+            </summary>
+            <param name="parameters">DosBox Parameters</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.Start">
+            <summary>
+            Start DosBox application
+            </summary>
+            <returns>Process of DosBox Application</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.StartAndWait">
+            <summary>
+            Start and wait for end DosBox Application
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.DosBoxVersion">
+            <summary>
+            DosBox version (future use)
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxVersion.#ctor(System.String)">
+            <summary>
+            Create a version fo the DosBox Application
+            </summary>
+            <param name="version">Version application</param>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxVersion.Version">
+            <summary>
+            DosBox version string
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.DosBoxVersion.Official0_74">
+            <summary>
+            Version from Official DosBox 0.74
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxVersion.ToString">
+            <summary>
+            Return version as string
+            </summary>
+            <returns>String of version</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxVersion.op_Explicit(TioRACLab.DosBox.DosBoxVersion)~System.String">
+            <summary>
+            Cast DosBoxVersion struct to string
+            </summary>
+            <param name="version">DosBoxVersion for cast</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxVersion.op_Implicit(System.String)~TioRACLab.DosBox.DosBoxVersion">
+            <summary>
+            Cast string to DosBoxVersion struct
+            </summary>
+            <param name="version">string to cast</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxVersion.op_Implicit(TioRACLab.DosBox.DosBoxVersion)~System.Version">
+            <summary>
+            Cast DosBoxVersion struct to Version class
+            </summary>
+            <param name="version">DosBoxVersion for cast</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxVersion.op_Implicit(System.Version)~TioRACLab.DosBox.DosBoxVersion">
+            <summary>
+            Cast Version class to DosBoxVersion struct
+            </summary>
+            <param name="version">Version class to cast</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.DosBoxVersionAttribute">
+            <summary>
+            Informs if parameter or setting is supported by DosBox Application version (future use)
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxVersionAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Create attribute with information of minimum and maximun version supported
+            </summary>
+            <param name="minVersion">Minimum version supported</param>
+            <param name="maxVersion">Maximum version supported</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxVersionAttribute.#ctor(System.Version,System.Version)">
+            <summary>
+            Create attribute with information of minimum and maximun version supported
+            </summary>
+            <param name="minVersion">Minimum version supported</param>
+            <param name="maxVersion">Maximum version supported</param>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxVersionAttribute.MinVersion">
+            <summary>
+            Minimum DosBox application version supported
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.DosBoxVersionAttribute.MaxVersion">
+            <summary>
+            Maximum DosBox application version supported
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.BaseOptions">
+            <summary>
+            Abstract class for using option classes
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.BaseOptions.#ctor">
+            <summary>
+            Create base class for options
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.BaseOptions.#ctor(System.String)">
+            <summary>
+            Create base class for options with section name
+            </summary>
+            <param name="sectionName">Section name from options</param>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.BaseOptions.SectionName">
+            <summary>
+            Section name of options file
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.BaseOptions.PropertyChangedHandler">
+            <summary>
+            Handler Property Changed
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.BaseOptions.OnPropertyChanged(System.String)">
+            <summary>
+            Notify Property Changed
+            </summary>
+            <param name="name">Name Property</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.BaseOptions.ToString">
+            <summary>
+            Return string with section name in INI file format 
+            </summary>
+            <returns>Section name in INI file format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.BaseOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load options values from dictonary
+            </summary>
+            <param name="dictionary">Dictonary with options data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.CPUCore">
+            <summary>
+            CPU core used in emulation
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUCore.Auto">
+            <summary>
+            Real-mode programs are run with the normal core. For protected mode programs it switches to dynamic core, if available. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUCore.Dynamic">
+            <summary>
+            The program instructions are, in blocks, translated to host processor instructions that execute directly. See also [1]. In the most cases this approach is more efficent than interpretation, except for programs that employ massive self-modifying code. This option is not present on all host platforms. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUCore.Normal">
+            <summary>
+            The program is interpreted instruction by instruction. This approach is a lot more CPU demanding than dynamic core but allows for a more fine-grained time emulation and is needed on platforms for which DOSBox doesn't have a dynamic core. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUCore.Simple">
+            <summary>
+            Basically the same as normal, but optimized for real-mode (older) games. In case a protected-mode game is started, it automatically switches back to normal core. 
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.CPUCycles">
+            <summary>
+            Amount of instructions DOSBox tries to emulate each millisecond.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.#ctor(System.UInt32)">
+            <summary>
+            Create a CPYCycles with number of cycles to each mullisecond
+            </summary>
+            <param name="cycles">Number of cycles to each mullisecond</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.#ctor(System.String)">
+            <summary>
+             Create a CPYCycles with string number of cycles to each mullisecond
+            </summary>
+            <param name="cycles">Number of cycles to each mullisecond or max | auto</param>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.CPUCycles.Cycles">
+            <summary>
+            Sets the emulated CPU speed to a fixed amount of cycles
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.ToString">
+            <summary>
+            Cast CPUCycles to string
+            </summary>
+            <returns>String of CPUCycles</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_Implicit(TioRACLab.DosBox.Options.CPUCycles)~System.String">
+            <summary>
+            Implicit cast from CPUCycles struct to string
+            </summary>
+            <param name="cycles">CPUCycles instance</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_Explicit(System.String)~TioRACLab.DosBox.Options.CPUCycles">
+            <summary>
+            Explicit cast from string to CPUCycles struct
+            </summary>
+            <param name="cycles">CPUCycles string</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_Equality(TioRACLab.DosBox.Options.CPUCycles,TioRACLab.DosBox.Options.CPUCycles)">
+            <summary>
+            The equality operator, returns true if its CPUCycles are equal, false otherwise.
+            </summary>
+            <param name="cycles1">First CPYCycles</param>
+            <param name="cycles2">Second CPUCycles</param>
+            <returns>True if its CPUCycles are equal, false otherwise</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_Inequality(TioRACLab.DosBox.Options.CPUCycles,TioRACLab.DosBox.Options.CPUCycles)">
+            <summary>
+            The inequality operator, returns true if its CPUCycles are not equal, false otherwise. 
+            </summary>
+            <param name="cycles1">First CPYCycles</param>
+            <param name="cycles2">Second CPUCycles</param>
+            <returns>True if its CPUCycles are not equal, false otherwise.</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_GreaterThan(TioRACLab.DosBox.Options.CPUCycles,TioRACLab.DosBox.Options.CPUCycles)">
+            <summary>
+            The > operator returns true if its left-hand CPUCycles is greater than its right-hand CPUCycles, false otherwise:
+            </summary>
+            <param name="cycles1">First CPYCycles</param>
+            <param name="cycles2">Second CPUCycles</param>
+            <returns>True if its left-hand CPUCycles is greater</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_LessThan(TioRACLab.DosBox.Options.CPUCycles,TioRACLab.DosBox.Options.CPUCycles)">
+            <summary>
+            The &lt; operator returns true if its left-hand CPUCycles is less than its right-hand CPUCycles, false otherwise
+            </summary>
+            <param name="cycles1">First CPYCycles</param>
+            <param name="cycles2">Second CPUCycles</param>
+            <returns>True if its left-hand CPUCycles is less</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_GreaterThanOrEqual(TioRACLab.DosBox.Options.CPUCycles,TioRACLab.DosBox.Options.CPUCycles)">
+            <summary>
+            The >= operator returns true if its left-hand CPUCycles is greater than or equal to its right-hand CPUCycles, false otherwise
+            </summary>
+            <param name="cycles1">First CPYCycles</param>
+            <param name="cycles2">Second CPUCycles</param>
+            <returns>True if its left-hand CPUCycles is greater than or equal</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_LessThanOrEqual(TioRACLab.DosBox.Options.CPUCycles,TioRACLab.DosBox.Options.CPUCycles)">
+            <summary>
+            The &lt;= operator returns true if its left-hand CPUCycles is less than or equal to its right-hand CPUCycles, false otherwise
+            </summary>
+            <param name="cycles1">First CPYCycles</param>
+            <param name="cycles2">Second CPUCycles</param>
+            <returns>True if its left-hand CPUCycles is less than or equal</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.Equals(System.Object)">
+            <summary>
+             The equality function, returns true if its CPUCycles are equal, false otherwise.
+            </summary>
+            <param name="obj">Compare object</param>
+            <returns>True if its CPUCycles are equal, false otherwise</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.GetHashCode">
+            <summary>
+            Return the hash code for this instance
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_Implicit(TioRACLab.DosBox.Options.CPUCycles)~System.UInt32">
+            <summary>
+            Implicit cast from CPUCycles struct to string
+            </summary>
+            <param name="cycles">CPUCycles instance</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUCycles.op_Implicit(System.UInt32)~TioRACLab.DosBox.Options.CPUCycles">
+            <summary>
+            Implicit cast from string to CPUCycles struct.
+            </summary>
+            <param name="cycles">CPUCycles string</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.CPUOptions">
+            <summary>
+            <para>The CPU section controls how DOSBox tries to emulate the CPU, how fast the emulation should be, and to adjust it. DOSBox offers 4 different methods of CPU emulation.</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Configuration:CPU">CPU Configuriotn DOSBox</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUOptions.#ctor">
+            <summary>
+            Create instance of CPU options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.CPUOptions.Core">
+            <summary>
+            CPU core used in emulation. The choices result in a different efficency of DOSBox and in very rare cases have an effect on stability. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.CPUOptions.CPUType">
+            <summary>
+            CPU Type used in emulation. auto is the fastest choice. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.CPUOptions.Cycles">
+            <summary>
+            Amount of instructions DOSBox tries to emulate each millisecond. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.CPUOptions.CycleUp">
+            <summary>
+            Amount of cycles to increase with keycombo.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.CPUOptions.CycleDown">
+            <summary>
+            Amount of cycles to decrease with keycombo. 
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUOptions.Create">
+            <summary>
+            Create a new CPU options for DosBox configuration
+            </summary>
+            <returns>CPU options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUOptions.AddCore(System.Nullable{TioRACLab.DosBox.Options.CPUCore})">
+            <summary>
+            CPU Core used in emulation. auto will switch to dynamic if available and appropriate.
+            </summary>
+            <param name="core">auto, dynamic, normal, simple</param>
+            <returns>CPU options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUOptions.AddCPUType(System.Nullable{TioRACLab.DosBox.Options.CPUType})">
+            <summary>
+            CPU Type used in emulation. auto is the fastest choice.
+            </summary>
+            <param name="cputype">auto, 386, 386_slow, 486_slow, pentium_slow, 386_prefetch</param>
+            <returns>CPU options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUOptions.AddCycles(System.Nullable{TioRACLab.DosBox.Options.CPUCycles})">
+            <summary>
+            Amount of instructions DOSBox tries to emulate each millisecond.
+            </summary>
+            <param name="cycles">Amount of instructions DOSBox tries to emulate each millisecond.</param>
+            <returns>CPU options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUOptions.AddCycleUp(System.Nullable{System.UInt32})">
+            <summary>
+            Amount of cycles to decrease/increase with keycombos.
+            </summary>
+            <param name="cycleup">Amount of cycles to decrease/increase with keycombos.</param>
+            <returns>CPU options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUOptions.AddCycleDown(System.Nullable{System.UInt32})">
+            <summary>
+            Setting it lower than 100 will be a percentage.
+            </summary>
+            <param name="cycledown">Setting it lower than 100 will be a percentage.</param>
+            <returns>CPU options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUOptions.ToString">
+            <summary>
+            Cast CPU options to string
+            </summary>
+            <returns>CPU options ini format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.CPUOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load CPU options value from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options DosBox data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.CPUType">
+            <summary>
+            CPU Type used in emulation
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUType.Auto">
+            <summary>
+            Auto is the fastest choice
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUType.CPU386">
+            <summary>
+            386 CPU type
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUType.Slow386">
+            <summary>
+            Slow 386 CPU Type
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUType.Slow486">
+            <summary>
+            Slow 486 CPU Type
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUType.SlowPentium">
+            <summary>
+            Slow Pentium CPU Type
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUType.Prefetch386">
+            <summary>
+            Prefetch 386 CPU Type
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.DosBoxMachine">
+            <summary>
+            The type of machine DOSBox tries to emulate.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.Hercules">
+            <summary>
+            Refers to a graphics card developed by Hercules Computer Technology 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.CGA">
+            <summary>
+            Refers to IBM's first color graphics card
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.Tandy">
+            <summary>
+            Refers to the additional graphics modes available on a Tandy 1000 or PCjr
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.PCjr">
+            <summary>
+            Refers not to a graphics mode but an entire system developed by IBM
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.EGA">
+            <summary>
+            Refers to a graphics card developed by IBM between the CGA and VGA
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.VGAOnly">
+            <summary>
+            IBM's graphics system introduced with the PS/2
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.SVGA_S3">
+            <summary>
+             A loose standard designed to allow graphics modes superior to that of VGA. This option emulates an S3 Trio64
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.SVGA_et3000">
+            <summary>
+            Emulates the Tseng Labs ET3000
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.SVGA_et4000">
+            <summary>
+            Emulates the Tseng Labs ET4000
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.SVGA_Paradise">
+            <summary>
+            Emulates the Paradise PVGA1A
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.Vesa_nolfb">
+            <summary>
+            The same as svga_s3 introduces a no-line frame buffer hack
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DosBoxMachine.Vesa_oldvbe">
+            <summary>
+            The same as svga_s3, but uses a lower version of VESA (1.3)
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.DosBoxOptions">
+            <summary>
+            <para>The DosBox options section contains various settings that do not pertain to any other section</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Configuration:DOSBOX">DosBox Configuriotn DOSBox</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxOptions.#ctor">
+            <summary>
+            Create instance of DosBox options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxOptions.Language">
+            <summary>
+            Select another language file.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxOptions.Machine">
+            <summary>
+            The type of machine (specifically the type of graphics hardware) DOSBox tries to emulate.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxOptions.Captures">
+            <summary>
+            Directory where things like music (wave and MIDI) and screenshots are captured when special keys CTRL-F5 and CTRL-F6 are used. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxOptions.MemSize">
+            <summary>
+            Amount of high memory (in megabytes) available to programs.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxOptions.Create">
+            <summary>
+            Create a new DosBox options for DosBox configuration
+            </summary>
+            <returns>DosBox options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxOptions.AddLanguage(System.String)">
+            <summary>
+            Select another language file.
+            </summary>
+            <param name="language">language file.</param>
+            <returns>DosBox options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxOptions.AddMachine(System.Nullable{TioRACLab.DosBox.Options.DosBoxMachine})">
+            <summary>
+            The type of machine (specifically the type of graphics hardware) DOSBox tries to emulate.
+            </summary>
+            <param name="machine">Machine type</param>
+            <returns>DosBox options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxOptions.AddCaptures(System.String)">
+            <summary>
+            Directory where things like music (wave and MIDI) and screenshots are captured when special keys CTRL-F5 and CTRL-F6 are used.
+            </summary>
+            <param name="captures">Captures directory</param>
+            <returns>DosBox options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxOptions.AddMemSize(System.Nullable{System.UInt32})">
+            <summary>
+            Amount of high memory (in megabytes) available to programs.
+            </summary>
+            <param name="memSize">Memory size</param>
+            <returns>DosBox options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxOptions.ToString">
+            <summary>
+            Cast DosBox options to string
+            </summary>
+            <returns>DosBox options ini format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load DosBox options value from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options DosBox data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.DosOptions">
+            <summary>
+            <para>DOS Options for DosBox</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Configuration:DOS">DOS Configuriotn SDL</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosOptions.#ctor">
+            <summary>
+            Create instance of DOS options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosOptions.XMS">
+            <summary>
+            Enable xms memory.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosOptions.EMS">
+            <summary>
+            Enable ems memory.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosOptions.UMB">
+            <summary>
+            Enable umb memory.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosOptions.KeyboardLayout">
+            <summary>
+            Change layout of the keyboard
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosOptions.Create">
+            <summary>
+            Create a new DOS Options for DosBox configuration
+            </summary>
+            <returns>DosBox DOS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosOptions.AddXMS(System.Nullable{System.Boolean})">
+            <summary>
+            Enable XMS memory.
+            </summary>
+            <param name="xms">XMS Memory.</param>
+            <returns>DosBox DOS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosOptions.AddEMS(System.Nullable{System.Boolean})">
+            <summary>
+            Enable EMS memory.
+            </summary>
+            <param name="ems">EMS Memory.</param>
+            <returns>DosBox DOS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosOptions.AddUMB(System.Nullable{System.Boolean})">
+            <summary>
+            Enable UMB memory.
+            </summary>
+            <param name="umb">UMB Memory.</param>
+            <returns>DosBox DOS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosOptions.AddKeyboardLayout(System.Nullable{TioRACLab.DosBox.Options.KeyboardLayout})">
+            <summary>
+            Change layout of the keyboard
+            </summary>
+            <param name="keyboardLayout">Keyboard Layout</param>
+            <returns>DosBox DOS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosOptions.ToString">
+            <summary>
+            Cast DOS options to string
+            </summary>
+            <returns>String in INI format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load DOS options values from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options DOS data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.MidiOptions">
+            <summary>
+            <para>Here you can define any MIDI related settings. The term MIDI is commonly used to refer to background music found in games, but specifically it refers to synthesizer audio (which can be passed directly from emulated games to modern hardware.</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Configuration:MIDI">MIDI Configuriotn SDL</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MidiOptions.#ctor">
+            <summary>
+            Create instance of Midi options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.MidiOptions.MPU401">
+            <summary>
+            Specifies which type of MIDI Processing Unit to emulate. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.MidiOptions.MidiDevice">
+            <summary>
+            A slightly confusing config name, because this isn't so much which MIDI device to use as which MIDI interface to use.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.MidiOptions.MidiConfig">
+            <summary>
+            As used by the MIDI interface described above, this specifies the ID which identifies the particular MIDI device to playback MIDI on.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MidiOptions.Create">
+            <summary>
+            Create a new Midi Options for DosBox configuration
+            </summary>
+            <returns>DosBox Midi configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MidiOptions.AddMPU401(System.Nullable{TioRACLab.DosBox.Options.MPU401})">
+            <summary>
+            ESpecifies which type of MIDI Processing Unit to emulate.
+            </summary>
+            <param name="mpu401">Intelligent | Uart | None</param>
+            <returns>DosBox DOS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MidiOptions.AddMidiDevice(System.Nullable{TioRACLab.DosBox.Options.MidiDevice})">
+            <summary>
+            A slightly confusing config name, because this isn't so much which MIDI device to use as which MIDI interface to use..
+            </summary>
+            <param name="mididevice">A slightly confusing config name, because this isn't so much which MIDI device to use as which MIDI interface to use..</param>
+            <returns>DosBox Midi configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MidiOptions.AddMidiConfig(System.String)">
+            <summary>
+            As used by the MIDI interface described above, this specifies the ID which identifies the particular MIDI device to playback MIDI on.
+            </summary>
+            <param name="midiconfig">As used by the MIDI interface described above, this specifies the ID which identifies the particular MIDI device to playback MIDI on.</param>
+            <returns>DosBox DOS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MidiOptions.ToString">
+            <summary>
+            Cast Midi options to string
+            </summary>
+            <returns>String in INI format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MidiOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load Midi options values from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options Midi data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.MixerBlockSize">
+            <summary>
+             Mixer block size
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MixerBlockSize.Block256">
+            <summary>
+            Block Size 256
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MixerBlockSize.Block512">
+            <summary>
+            Block Size 512
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MixerBlockSize.Block1024">
+            <summary>
+            Block Size 1024
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MixerBlockSize.Block2048">
+            <summary>
+            Block Size 2048
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MixerBlockSize.Block4096">
+            <summary>
+            Block Size 4096
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MixerBlockSize.Block8192">
+            <summary>
+            Block Size 8192
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.MixerOptions">
+            <summary>
+            <para>Here you can define the quality of emulated audio.</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Sound">Soubd DoSBox</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MixerOptions.#ctor">
+            <summary>
+            Create instance of Mixer options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.MixerOptions.NoSound">
+            <summary>
+            Enable silent mode, sound is still emulated though.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.MixerOptions.Rate">
+            <summary>
+            Mixer sample rate, setting any device's rate higher than this will probably lower their sound quality.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.MixerOptions.BlockSize">
+            <summary>
+            Mixer block size, larger blocks might help sound stuttering but sound will also be more lagged.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.MixerOptions.PreBuffer">
+            <summary>
+            How many milliseconds of data to keep on top of the blocksize.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MixerOptions.Create">
+            <summary>
+            Create a new Mixer options for DosBox configuration
+            </summary>
+            <returns>Mixer options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MixerOptions.AddNoSound(System.Nullable{System.Boolean})">
+            <summary>
+            Enable silent mode, sound is still emulated though.
+            </summary>
+            <param name="nosound">Enable silent mode, sound is still emulated though.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MixerOptions.AddRate(System.Nullable{TioRACLab.DosBox.Options.SampleRate})">
+            <summary>
+            Mixer sample rate, setting any device's rate higher than this will probably lower their sound quality.
+            </summary>
+            <param name="rate">Possible values: 44100, 48000, 32000, 22050, 16000, 11025, 8000, 49716.</param>
+            <returns>Mixer options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MixerOptions.AddBlockSize(System.Nullable{TioRACLab.DosBox.Options.MixerBlockSize})">
+            <summary>
+            Mixer block size, larger blocks might help sound stuttering but sound will also be more lagged.
+            </summary>
+            <param name="blocksize">Possible values: 1024, 2048, 4096, 8192, 512, 256.</param>
+            <returns>Mixer options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MixerOptions.AddPreBuffer(System.Nullable{System.UInt32})">
+            <summary>
+            How many milliseconds of data to keep on top of the blocksize.
+            </summary>
+            <param name="prebuffer">How many milliseconds of data to keep on top of the blocksize.</param>
+            <returns>Mixer options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MixerOptions.ToString">
+            <summary>
+            Cast Mixer options to string
+            </summary>
+            <returns>CPU options ini format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.MixerOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load Mixer options value from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options DosBox data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.PriorityLevel">
+            <summary>
+             Priority level for DosBox in <a href="https://www.dosbox.com/wiki/Configuration:SDL">SDL</a> options
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.PriorityLevel.Pause">
+            <summary>
+            Pause DosBox, only when minimized
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.PriorityLevel.Lowest">
+            <summary>
+            Lowest priority
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.PriorityLevel.Lower">
+            <summary>
+            Lower priority
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.PriorityLevel.Normal">
+            <summary>
+            Normal priority
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.PriorityLevel.Higher">
+            <summary>
+            Higher priority
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.PriorityLevel.Highest">
+            <summary>
+            Highest priority
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.RenderOptions">
+            <summary>
+            <para>The rendering (drawing) section controls methods that DOSBox uses to improve the speed and quality of the graphics displayed on the screen</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Configuration:RENDER">Render Configuriotn DOSBox</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.RenderOptions.#ctor">
+            <summary>
+            Create instance of Render options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.RenderOptions.Frameskip">
+            <summary>
+            How many frames DOSBox skips before drawing one.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.RenderOptions.Aspect">
+            <summary>
+            Do aspect correction, if your output method doesn't support scaling this can slow things down!
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.RenderOptions.Scaler">
+            <summary>
+            Scaler used to enlarge/enhance low resolution modes.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.RenderOptions.Create">
+            <summary>
+            Create a new Render options for DosBox configuration
+            </summary>
+            <returns>Render options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.RenderOptions.AddFrameskip(System.Nullable{System.UInt32})">
+            <summary>
+            How many frames DOSBox skips before drawing one.
+            </summary>
+            <param name="frameskip">frames skips</param>
+            <returns>Render options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.RenderOptions.AddAspect(System.Nullable{System.Boolean})">
+            <summary>
+            Do aspect correction, if your output method doesn't support scaling this can slow things down!
+            </summary>
+            <param name="aspect">Aspect correction?</param>
+            <returns>Render options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.RenderOptions.AddScaler(System.Nullable{TioRACLab.DosBox.Options.ScalerType})">
+            <summary>
+            Scaler used to enlarge/enhance low resolution modes.
+            </summary>
+            <param name="scaler">Scaler</param>
+            <returns>Render options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.RenderOptions.ToString">
+            <summary>
+            Cast Render options to string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.RenderOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load Render options value from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options Render data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.Resolution">
+            <summary>
+            Resolution dosbox will run. <a href="https://www.dosbox.com/wiki/Configuration:SDL">SDL</a> options.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Resolution.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Create resolution options
+            </summary>
+            <param name="width">Width size</param>
+            <param name="height">Height size</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Resolution.#ctor(System.String)">
+            <summary>
+            Create resolution from string
+            </summary>
+            <exception cref="T:System.NotSupportedException">Resolution string is badly formatted</exception>
+            <param name="resolution">Resolution string, example 800x600</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Resolution.#ctor(TioRACLab.DosBox.Options.Resolution.ResolutionType)">
+            <summary>
+            Create resolution from Type
+            </summary>
+            <param name="type">Resolution type, Original ou Desktop</param>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.Width">
+            <summary>
+            Width size
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.Height">
+            <summary>
+            Height size
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.Type">
+            <summary>
+            Type resolution, Desktop or Original
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Resolution.ToString">
+            <summary>
+            Cast resolution to string
+            </summary>
+            <returns>String of resolution, example 800x600</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Resolution.op_Implicit(TioRACLab.DosBox.Options.Resolution)~System.String">
+            <summary>
+            Implicit cast from Resolution to string
+            </summary>
+            <param name="resolution">Resolution struct</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Resolution.op_Explicit(System.String)~TioRACLab.DosBox.Options.Resolution">
+            <summary>
+            Explicit cast from string to Resolution struct
+            </summary>
+            <exception cref="T:System.NotSupportedException">Resolution string is badly formatted</exception>
+            <param name="resolution">Resolution string</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.Resolution.ResolutionType">
+            <summary>
+            Resolution type for DosBox
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Resolution.ResolutionType.Original">
+            <summary>
+            Uses resolution of running DOS application
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Resolution.ResolutionType.Desktop">
+            <summary>
+            Use your desktop resolution
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Resolution.CGA">
+            <summary>
+            <para>Resolution from CGA format: 320x200.</para>
+            <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.WVGA">
+            <summary>
+            <para>Resolution from WVGA format: 800x400.</para>
+            <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.FWVGA">
+            <summary>
+            <para>Resolution from FWVGA format: 854x480.</para>
+            <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.WSVGA">
+            <summary>
+            <para>Resolution from WSVGA format: 1024x600.</para>
+            <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.QVGA">
+            <summary>
+            <para>Resolution from QVGA format: 320x240.</para>
+            <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.VGA">
+            <summary>
+            <para>Resolution from VGA format: 640x480.</para>
+            <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.PAL">
+            <summary>
+            <para>Resolution from PAL format: 768x576.</para>
+            <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.SVGA">
+            <summary>
+            <para>Resolution from SVGA format: 800x600.</para>
+            <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.XGA">
+            <summary>
+            <para>Resolution from XGA format: 1024x768.</para>
+            <para>See <a href="https://en.wikipedia.org/wiki/Graphics_display_resolution">Wikipedia Graphics Display Resolution</a> article.</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.Desktop">
+            <summary>
+            <para>Resolution from your Desktop</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Resolution.Original">
+            <summary>
+            <para>Resolution from dos application is running.</para>
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.SampleRate">
+            <summary>
+            Mixer sample rate
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SampleRate.Rate8000">
+            <summary>
+            Mixer sample rate 8000
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SampleRate.Rate11025">
+            <summary>
+            Mixer sample rate 11025
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SampleRate.Rate16000">
+            <summary>
+            Mixer sample rate 16000
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SampleRate.Rate22050">
+            <summary>
+            Mixer sample rate 22050
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SampleRate.Rate32000">
+            <summary>
+            Mixer sample rate 32000
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SampleRate.Rate44100">
+            <summary>
+            Mixer sample rate 44100
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SampleRate.Rate48000">
+            <summary>
+            Mixer sample rate 48000
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SampleRate.Rate49716">
+            <summary>
+            Mixer sample rate 49716
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.ScalerType">
+            <summary>
+            Scaler used to enlarge/enhance low resolution modes.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.None">
+            <summary>
+            No scaling is performed.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.Normal2x">
+            <summary>
+            Nearest-neighbour scaling (big square pixels) - 2x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.Normal3x">
+            <summary>
+            Nearest-neighbour scaling (big square pixels) - 3x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.AdvMame2x">
+            <summary>
+            Smooths corners and removes jaggies from diagonal lines -2x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.AdvMame3x">
+            <summary>
+            Smooths corners and removes jaggies from diagonal lines -3x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.AdvInterp2x">
+            <summary>
+            Identical to 'advmame' - 2x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.AdvInterp3x">
+            <summary>
+            Identical to 'advmame' - 3x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.HQ2x">
+            <summary>
+            A 'high quality' scaler which delivers a cleaner and sharper image than 'advmame' or 'sai' scalers - 2x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.HQ3x">
+            <summary>
+            A 'high quality' scaler which delivers a cleaner and sharper image than 'advmame' or 'sai' scalers - 3x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.TwoxSai">
+            <summary>
+            Similar to 'advmame' but with much softer color gradients and edges. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.Super2xSai">
+            <summary>
+            Similar to 'sai' but sharper
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.SuperEagle">
+            <summary>
+            SuperEagle
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.TV2x">
+            <summary>
+            Like 'scan', but with darkened versions of the data instead of black lines - 2x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.TV3x">
+            <summary>
+            Like 'scan', but with darkened versions of the data instead of black lines - 3x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.RGB2x">
+            <summary>
+            Simulates the phosphors on a dot trio CRT - 2x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.RGB3x">
+            <summary>
+            Simulates the phosphors on a dot trio CRT - 3x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.Scan2x">
+            <summary>
+            Like 'normal', but with horizontal black lines - 2x
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.ScalerType.Scan3x">
+            <summary>
+            Like 'normal', but with horizontal black lines - 3x
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.SdlOptions">
+            <summary>
+            <para>SDL Options for DosBox</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Configuration:SDL">DosBox Configuriotn SDL</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.#ctor">
+            <summary>
+            Create instance of SDL options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.FullScreen">
+            <summary>
+            Start DOSBox directly in fullscreen.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.FullDouble">
+            <summary>
+            Use double buffering in fullscreen.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.FullResolution">
+            <summary>
+            Scale the application to this size IF the output device supports hardware scaling 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.WindowResolution">
+            <summary>
+            Scale the window to this size IF the output device supports hardware scaling
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.Output">
+            <summary>
+            What to use for output. Surface does not support scaling or aspect correction.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.AutoLock">
+            <summary>
+            Mouse will automatically lock, if you click on the screen.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.Sensitivity">
+            <summary>
+            Mouse sensitivity. 1..1000
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.WaitOnError">
+            <summary>
+            Wait before closing the console if DOSBox has an error.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.PriorityFocused">
+            <summary>
+            <para>Priority levels for DOSBox.</para>
+            <para>Priority for when DosBox is focused</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.PriorityMinimized">
+            <summary>
+            <para>Priority levels for DOSBox.</para>
+            <para>Priority for when DosBox is minimized</para>
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.MapperFile">
+            <summary>
+            File used to load/save the key/event mappings from.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SdlOptions.UseScanCodes">
+            <summary>
+            Avoid usage of symkeys, might not work on all operating systems
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.Create">
+            <summary>
+            Create a new SDL Options for DosBox configuration
+            </summary>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddFullScreen(System.Nullable{System.Boolean})">
+            <summary>
+            Start DOSBox directly in fullscreen.
+            </summary>
+            <param name="fullscreen">Start DOSBox directly in fullscreen.</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddFullDouble(System.Nullable{System.Boolean})">
+            <summary>
+            Use double buffering in fullscreen.
+            </summary>
+            <param name="fulldouble">Use double buffering in fullscreen.</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddFullResolution(System.Nullable{TioRACLab.DosBox.Options.Resolution})">
+            <summary>
+            Scale the application to this size IF the output device supports hardware scaling 
+            </summary>
+            <param name="resolution">Resolution the application</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddWindowResolution(System.Nullable{TioRACLab.DosBox.Options.Resolution})">
+            <summary>
+            Scale the window to this size IF the output device supports hardware scaling
+            </summary>
+            <param name="resolution">Windows resolution</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddOutput(System.Nullable{TioRACLab.DosBox.Options.VideoOutput})">
+            <summary>
+            What to use for output. Surface does not support scaling or aspect correction.
+            </summary>
+            <param name="output">What to use for output. Surface does not support scaling or aspect correction.</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddAutoLock(System.Nullable{System.Boolean})">
+            <summary>
+            Mouse will automatically lock, if you click on the screen.
+            </summary>
+            <param name="autoLock">Mouse will automatically lock, if you click on the screen.</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddSensitivity(System.Nullable{System.Int32})">
+            <summary>
+            Mouse sensitivity. 1..1000
+            </summary>
+            <param name="sensitivity">Mouse sensitivity. 1..1000</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddWaitOnError(System.Nullable{System.Boolean})">
+            <summary>
+            Wait before closing the console if DOSBox has an error.
+            </summary>
+            <param name="waitOnError">Wait before closing the console if DOSBox has an error.</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddPriorityFocused(System.Nullable{TioRACLab.DosBox.Options.PriorityLevel})">
+            <summary>
+            <para>Priority levels for DOSBox.</para>
+            <para>Priority for when DosBox is focused</para>
+            </summary>
+            <param name="priorityFocused">Priority levels for DOSBox</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddPriorityMinimized(System.Nullable{TioRACLab.DosBox.Options.PriorityLevel})">
+            <summary>
+            <para>Priority levels for DOSBox.</para>
+            <para>Priority for when DosBox is minimized</para>
+            </summary>
+            <param name="priorityMinimized">Priority levels for DOSBox</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddMapperFile(System.String)">
+            <summary>
+            File used to load/save the key/event mappings from.
+            </summary>
+            <param name="mapperFile">File used to load/save the key/event mappings from.</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.AddUseScanCodes(System.Nullable{System.Boolean})">
+            <summary>
+            Avoid usage of symkeys, might not work on all operating systems
+            </summary>
+            <param name="useScanCodes">Avoid usage of symkeys, might not work on all operating systems</param>
+            <returns>DosBox SDL configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.ToString">
+            <summary>
+            Cast SDL options to string
+            </summary>
+            <returns>String in INI format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SdlOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load SDL options values from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options SDL data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.SimpleIniParse">
+            <summary>
+            Simple class for read and write INI data
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SimpleIniParse.CreateIniLine(System.Text.StringBuilder,System.String,System.Object[])">
+            <summary>
+            Create ini line with data with StringBuilder class
+            </summary>
+            <param name="stringBuilder">StringBuild that will include the line with the option</param>
+            <param name="key">Key parameters name</param>
+            <param name="values">Value option</param>
+            <returns>New line inserted or null when no line was inseted</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SimpleIniParse.GetBool(System.Object)">
+            <summary>
+            Get boolean value
+            </summary>
+            <param name="value">Object bool value</param>
+            <returns>bool value</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SimpleIniParse.GetInt(System.Object)">
+            <summary>
+            Get integer value
+            </summary>
+            <param name="value">Object int value</param>
+            <returns>int value</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SimpleIniParse.GetUInt(System.Object)">
+            <summary>
+            Get unsigned integer value
+            </summary>
+            <param name="value">Object uint value</param>
+            <returns>uint value</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SimpleIniParse.GetEnum``1(System.Object)">
+            <summary>
+            Get enumerator value
+            </summary>
+            <typeparam name="T">Enumerator type</typeparam>
+            <param name="value">Object enum value</param>
+            <returns>enum value</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SimpleIniParse.ReadIniOptions(System.String)">
+            <summary>
+            Read a string in INI format and convert to dictionary
+            </summary>
+            <param name="iniOptions">string in INI format</param>
+            <returns>Dictionary</returns>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.VideoOutput">
+            <summary>
+            Output options in <a href="https://www.dosbox.com/wiki/Configuration:SDL">SDL</a> options
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.VideoOutput.Surface">
+            <summary>
+            Output surface
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.VideoOutput.Overlay">
+            <summary>
+            Output overlay
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.VideoOutput.OpenGL">
+            <summary>
+            Output OpenGL
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.VideoOutput.OpenGLnb">
+            <summary>
+            Output OpenGLln
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.VideoOutput.DDraw">
+            <summary>
+            Output DirectDraw
+            </summary>
+        </member>
+    </members>
+</doc>
