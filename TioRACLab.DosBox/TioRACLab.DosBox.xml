@@ -1041,6 +1041,47 @@
             </summary>
             <param name="dictionary">Dictionary with options DOS data</param>
         </member>
+        <member name="T:TioRACLab.DosBox.Options.IPXOptions">
+            <summary>
+            <para>IPX Options for DosBox</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Configuration:IPX">IPX Configuriotn SDL</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.IPXOptions.#ctor">
+            <summary>
+            Create instance of IPX options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.IPXOptions.IPX">
+            <summary>
+            Enable IPX.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.IPXOptions.Create">
+            <summary>
+            Create a new IPX Options for DosBox configuration
+            </summary>
+            <returns>DosBox IPX configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.IPXOptions.AddIPX(System.Nullable{System.Boolean})">
+            <summary>
+            Enable IPX.
+            </summary>
+            <param name="ipx">Enable IPX.</param>
+            <returns>DosBox IPX configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.IPXOptions.ToString">
+            <summary>
+            Cast IPX options to string
+            </summary>
+            <returns>String in INI format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.IPXOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load IPX options values from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options IPX data</param>
+        </member>
         <member name="T:TioRACLab.DosBox.Options.MidiOptions">
             <summary>
             <para>Here you can define any MIDI related settings. The term MIDI is commonly used to refer to background music found in games, but specifically it refers to synthesizer audio (which can be passed directly from emulated games to modern hardware.</para>
