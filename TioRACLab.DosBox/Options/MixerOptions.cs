@@ -6,7 +6,7 @@ namespace TioRACLab.DosBox.Options
 {
     /// <summary>
     /// <para>Here you can define the quality of emulated audio.</para>
-    /// <para>See more in <a href="https://www.dosbox.com/wiki/Sound">Soubd DoSBox</a> Wiki page</para>
+    /// <para>See more in <a href="https://www.dosbox.com/wiki/Sound">Sound DoSBox</a> Wiki page</para>
     /// </summary>
     public class MixerOptions : BaseOptions
     {
@@ -165,7 +165,7 @@ namespace TioRACLab.DosBox.Options
         /// <summary>
         /// Cast Mixer options to string
         /// </summary>
-        /// <returns>CPU options ini format</returns>
+        /// <returns>Mixer options ini format</returns>
         public override string ToString()
         {
             var options = new StringBuilder(base.ToString());
