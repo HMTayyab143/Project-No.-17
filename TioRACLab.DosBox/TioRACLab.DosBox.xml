@@ -4,6 +4,17 @@
         <name>TioRACLab.DosBox</name>
     </assembly>
     <members>
+        <member name="F:TioRACLab.DosBox.Commands.Command.PropertyChangedHandler">
+            <summary>
+            Handler Property Changed
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Commands.Command.OnPropertyChanged(System.String)">
+            <summary>
+            Notify Property Changed
+            </summary>
+            <param name="name">Name Property</param>
+        </member>
         <member name="T:TioRACLab.DosBox.DosBoxParameters">
             <summary>
             DosBox command line parameters see: <a href="https://www.dosbox.com/wiki/Usage">DosBox Wiki: Usage</a>
@@ -515,6 +526,53 @@
             <summary>
             Maximum DosBox application version supported
             </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.AutoexecOptions">
+            <summary>
+            Here you can define the contents of the AUTOEXEC.BAT file
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.AutoexecOptions.#ctor">
+            <summary>
+            Create instance of Autoexec options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.AutoexecOptions.Commands">
+            <summary>
+            List commands to autoexec run
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.AutoexecOptions.Create">
+            <summary>
+            Create a new Autoexec Options for DosBox configuration
+            </summary>
+            <returns>DosBox Autoexec configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.AutoexecOptions.AddCommand(TioRACLab.DosBox.Commands.Command)">
+            <summary>
+            Add command to autoexec options
+            </summary>
+            <param name="command">Add command to autoexec options</param>
+            <returns>DosBox Autoexec configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.AutoexecOptions.AddCommand(System.String)">
+            <summary>
+            Add command to autoexec options
+            </summary>
+            <param name="command">Add command to autoexec options</param>
+            <returns>DosBox Autoexec configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.AutoexecOptions.ToString">
+            <summary>
+            Cast CPU options to string
+            </summary>
+            <returns>CPU options ini format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.AutoexecOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load Autoexec options value from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options DosBox data</param>
         </member>
         <member name="T:TioRACLab.DosBox.Options.BaseOptions">
             <summary>

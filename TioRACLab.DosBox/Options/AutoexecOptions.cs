@@ -52,17 +52,31 @@ namespace TioRACLab.DosBox.Options
 
         #region "Fluent"
 
+        /// <summary>
+        /// Create a new Autoexec Options for DosBox configuration
+        /// </summary>
+        /// <returns>DosBox Autoexec configuration to add another configuration</returns>
         public static AutoexecOptions Create()
         {
             return new AutoexecOptions();
         }
 
+        /// <summary>
+        /// Add command to autoexec options
+        /// </summary>
+        /// <param name="command">Add command to autoexec options</param>
+        /// <returns>DosBox Autoexec configuration to add another configuration</returns>
         public AutoexecOptions AddCommand(Command command)
         {
             this.Commands.Add(command);
             return this;
         }
 
+        /// <summary>
+        /// Add command to autoexec options
+        /// </summary>
+        /// <param name="command">Add command to autoexec options</param>
+        /// <returns>DosBox Autoexec configuration to add another configuration</returns>
         public AutoexecOptions AddCommand(string command)
         {
             this.Commands.Add(new CustomCommand(command));

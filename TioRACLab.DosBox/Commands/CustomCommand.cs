@@ -17,7 +17,7 @@ namespace TioRACLab.DosBox.Commands
         internal protected CustomCommand(string command)
             : this()
         {
-
+            this.Command = command;
         }
 
         #endregion "Constructions"
