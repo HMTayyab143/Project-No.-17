@@ -698,6 +698,16 @@
             </summary>
             <param name="cycles">CPUCycles string</param>
         </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUCycles.AUTO">
+            <summary>
+            For realmode games, this option switches to realmode default number of cycles or 3000 if not specified.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.CPUCycles.MAX">
+            <summary>
+            Automatically sets the cycles so approximately the (optional) default%-value of your host CPU is used. If the value is not specified it defaults to 100%.
+            </summary>
+        </member>
         <member name="T:TioRACLab.DosBox.Options.CPUOptions">
             <summary>
             <para>The CPU section controls how DOSBox tries to emulate the CPU, how fast the emulation should be, and to adjust it. DOSBox offers 4 different methods of CPU emulation.</para>
@@ -820,6 +830,41 @@
         <member name="F:TioRACLab.DosBox.Options.CPUType.Prefetch386">
             <summary>
             Prefetch 386 CPU Type
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.DMA">
+            <summary>
+            Direct memory access (DMA) is a feature of computer systems that allows certain hardware subsystems to access main system memory (random-access memory), independent of the central processing unit (CPU). 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DMA.DMA0">
+            <summary>
+            DMA 0
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DMA.DMA1">
+            <summary>
+            DMA 1
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DMA.DMA3">
+            <summary>
+            DMA 3
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DMA.DMA5">
+            <summary>
+            DMA 5
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DMA.DMA6">
+            <summary>
+            DMA 6
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.DMA.DMA7">
+            <summary>
+            DMA7
             </summary>
         </member>
         <member name="T:TioRACLab.DosBox.Options.DosBoxMachine">
@@ -1041,6 +1086,152 @@
             </summary>
             <param name="dictionary">Dictionary with options DOS data</param>
         </member>
+        <member name="T:TioRACLab.DosBox.Options.GusOptions">
+            <summary>
+            <para>GUS Options for DosBox</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Sound">Sound</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.#ctor">
+            <summary>
+            Create instance of GUS options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.GusOptions.GUS">
+            <summary>
+            Enable the Gravis Ultrasound emulation..
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.GusOptions.GusRate">
+            <summary>
+            Sample rate of Ultrasound emulation.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.GusOptions.GusBase">
+            <summary>
+            The IO base address of the Gravis Ultrasound.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.GusOptions.GusIRQ">
+            <summary>
+            The IRQ number of the Gravis Ultrasound.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.GusOptions.GusDMA">
+            <summary>
+            The DMA channel of the Gravis Ultrasound.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.GusOptions.UltraDir">
+            <summary>
+            Path to Ultrasound directory. In this directory there should be a MIDI directory that contains the patch files for GUS playback.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.Create">
+            <summary>
+            Create a new GUS Options for DosBox configuration
+            </summary>
+            <returns>DosBox GUS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.AddGUS(System.Nullable{System.Boolean})">
+            <summary>
+            Enable the Gravis Ultrasound emulation.
+            </summary>
+            <param name="gus">Enable the Gravis Ultrasound emulation.</param>
+            <returns>DosBox GUS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.AddGusRate(System.Nullable{TioRACLab.DosBox.Options.SampleRate})">
+            <summary>
+            Sample rate of Ultrasound emulation.
+            </summary>
+            <param name="gusrate">Possible values: 44100, 48000, 32000, 22050, 16000, 11025, 8000, 49716.</param>
+            <returns>DosBox GUS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.AddGusBase(System.Nullable{TioRACLab.DosBox.Options.IOAddress})">
+            <summary>
+             The IO base address of the Gravis Ultrasound.
+            </summary>
+            <param name="gusbase">Possible values: 240, 220, 260, 280, 2a0, 2c0, 2e0, 300.</param>
+            <returns>DosBox GUS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.AddGusIRQ(System.Nullable{TioRACLab.DosBox.Options.IRQ})">
+            <summary>
+            The IRQ number of the Gravis Ultrasound.
+            </summary>
+            <param name="gusirq">Possible values: 5, 3, 7, 9, 10, 11, 12.</param>
+            <returns>DosBox GUS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.AddGusDMA(System.Nullable{TioRACLab.DosBox.Options.DMA})">
+            <summary>
+            The DMA channel of the Gravis Ultrasound.
+            </summary>
+            <param name="dma">Possible values: 3, 0, 1, 5, 6, 7.</param>
+            <returns>DosBox GUS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.AddUltraDir(System.String)">
+            <summary>
+            Path to Ultrasound directory. In this directory there should be a MIDI directory that contains the patch files for GUS playback.
+            </summary>
+            <param name="ultradir">Path to Ultrasound directory. In this directory there should be a MIDI directory that contains the patch files for GUS playback.</param>
+            <returns>DosBox GUS configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.ToString">
+            <summary>
+            Cast GUS options to string
+            </summary>
+            <returns>String in INI format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.GusOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load GUS options values from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options GUS data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.IOAddress">
+            <summary>
+             Input/Output base address is the first address of a range of consecutive read/write addresses that a device uses on the x86's IO bus.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IOAddress.Address220">
+            <summary>
+            Address 220 - Default Sound Card IO
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IOAddress.Address240">
+            <summary>
+            Address 240
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IOAddress.Address260">
+            <summary>
+            Address 260
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IOAddress.Address280">
+            <summary>
+            Address 280
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IOAddress.Address2A0">
+            <summary>
+            Address 2A0
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IOAddress.Address2C0">
+            <summary>
+            Address 2C0
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IOAddress.Address2E0">
+            <summary>
+            Address 2E0
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IOAddress.Address300">
+            <summary>
+            Address 300 - Default NIC Card
+            </summary>
+        </member>
         <member name="T:TioRACLab.DosBox.Options.IPXOptions">
             <summary>
             <para>IPX Options for DosBox</para>
@@ -1081,6 +1272,120 @@
             Load IPX options values from dictionary
             </summary>
             <param name="dictionary">Dictionary with options IPX data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.IRQ">
+            <summary>
+            An interrupt request (or IRQ) is a hardware signal sent to the processor that temporarily stops a running program and allows a special program
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IRQ.IRQ3">
+            <summary>
+            IRQ 3
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IRQ.IRQ5">
+            <summary>
+            IRQ 5
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IRQ.IRQ7">
+            <summary>
+            IRQ 7
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IRQ.IRQ9">
+            <summary>
+            IRQ 9
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IRQ.IRQ10">
+            <summary>
+            IRQ 10
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IRQ.IRQ11">
+            <summary>
+            IRQ 11
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.IRQ.IRQ12">
+            <summary>
+            IRQ 12
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.KeyboardLayout">
+            <summary>
+            KeyboardLayout is used to change the layout of the keyboard used for different countries. 
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.KeyboardLayout.#ctor(System.String)">
+            <summary>
+            Crete a KeyboardLayout struct
+            </summary>
+            <param name="layout">keyboard layout</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.KeyboardLayout.#ctor(System.String,System.UInt32)">
+            <summary>
+            Crete a KeyboardLayout struct
+            </summary>
+            <param name="layout">Keyboard layout</param>
+            <param name="character">Character set</param>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.KeyboardLayout.Layout">
+            <summary>
+            Keyboard layout 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.KeyboardLayout.Character">
+            <summary>
+            Character set
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.KeyboardLayout.ToString">
+            <summary>
+            Cast struct KeyboardLayout to string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.MidiDevice">
+            <summary>
+            A slightly confusing config name, because this isn't so much which MIDI device to use as which MIDI interface to use.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MidiDevice.Default">
+            <summary>
+            The default system MIDI playback device is used. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MidiDevice.Win32">
+            <summary>
+            Win32 MIDI playback interface is used. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MidiDevice.Alsa">
+            <summary>
+            Linux's Advanced Linux Sound Architecture playback interface is used.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MidiDevice.OSS">
+            <summary>
+            Linux's Open Sound System playback interface is used.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MidiDevice.CoreAudio">
+            <summary>
+            MacOS X's framework to render the music through the built-in OS X synthesizer. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MidiDevice.CoreMidi">
+            <summary>
+            MacOS X's framework to route MIDI commands to any device that has been configured in Audio MIDI Setup. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MidiDevice.None">
+            <summary>
+            MIDI is disabled.
+            </summary>
         </member>
         <member name="T:TioRACLab.DosBox.Options.MidiOptions">
             <summary>
@@ -1185,7 +1490,7 @@
         <member name="T:TioRACLab.DosBox.Options.MixerOptions">
             <summary>
             <para>Here you can define the quality of emulated audio.</para>
-            <para>See more in <a href="https://www.dosbox.com/wiki/Sound">Soubd DoSBox</a> Wiki page</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Sound">Sound DoSBox</a> Wiki page</para>
             </summary>
         </member>
         <member name="M:TioRACLab.DosBox.Options.MixerOptions.#ctor">
@@ -1251,13 +1556,88 @@
             <summary>
             Cast Mixer options to string
             </summary>
-            <returns>CPU options ini format</returns>
+            <returns>Mixer options ini format</returns>
         </member>
         <member name="M:TioRACLab.DosBox.Options.MixerOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
             <summary>
             Load Mixer options value from dictionary
             </summary>
             <param name="dictionary">Dictionary with options DosBox data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.MPU401">
+            <summary>
+            Specifies which type of MIDI Processing Unit to emulate. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MPU401.None">
+            <summary>
+            MIDI is not emulated. 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MPU401.Intelligent">
+            <summary>
+            The MPU-401 can work in two modes, normal mode and UART mode. "Normal mode" would provide the host system with an 8-track sequencer, MIDI clock output, SYNC 24 signal output, Tape Sync and a metronome; as a result of these features, it is often called "intelligent mode"
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.MPU401.Uart">
+            <summary>
+            This simply emulates UART mode, which reduces the MPU-401 to just relaying in-/outcoming MIDI data bytes. 
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.OplEmu">
+            <summary>
+            Provider for the OPL emulation. compat might provide better quality
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.OplEmu.Default">
+            <summary>
+            OPL Emu Default
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.OplEmu.Compat">
+            <summary>
+            OPL Emu Compat
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.OplEmu.Fast">
+            <summary>
+            OPL Emu Fast
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.OplMode">
+            <summary>
+            Type of OPL emulation. On 'auto' the mode is determined by sblaster type. All OPL modes are Adlib-compatible, except for 'cms'.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.OplMode.None">
+            <summary>
+            OPL Disabled
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.OplMode.Auto">
+            <summary>
+            OPL Auto
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.OplMode.CMD">
+            <summary>
+            OPL CMD
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.OplMode.OPL2">
+            <summary>
+            OPL 2
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.OplMode.DualOPL2">
+            <summary>
+            Dual OPL 2
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.OplMode.OPL3">
+            <summary>
+            OPL 3
+            </summary>
         </member>
         <member name="T:TioRACLab.DosBox.Options.PriorityLevel">
             <summary>
@@ -1863,6 +2243,183 @@
             </summary>
             <param name="iniOptions">string in INI format</param>
             <returns>Dictionary</returns>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.SoundBlaster">
+            <summary>
+            The Sound Blaster is widely considered the most popular audio device standard. In the DOS era of games, it came in several editions.
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SoundBlaster.None">
+            <summary>
+            Sound Blaster Emulation disabled
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SoundBlaster.SoundBlaster1">
+            <summary>
+            Emulation Sound Blaster 1.0 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SoundBlaster.SoundBlaster2">
+            <summary>
+            Emulation Sound Blaster 2.0 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SoundBlaster.SoundBlasterPro1">
+            <summary>
+            Emulation Sound Blaster Pro 1.0 
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SoundBlaster.SoundBlasterPro2">
+            <summary>
+            Emulation Sound Blaster Pro 2.0
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SoundBlaster.SoundBlaster16">
+            <summary>
+            Emulation Sound Blaster 16
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SoundBlaster.Gameblaster">
+            <summary>
+            Emulation GameBlaster
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.SoundBlasterOptions">
+            <summary>
+            <para>Sound Blaster related settings.</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Sound">Sound DoSBox</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.#ctor">
+            <summary>
+            Create instance of Sound Blaster options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SoundBlasterOptions.SBType">
+            <summary>
+            Type of Soundblaster to emulate. gb is Gameblaster.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SoundBlasterOptions.SBBase">
+            <summary>
+            The IO address of the soundblaster.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SoundBlasterOptions.IRQ">
+            <summary>
+            The IRQ number of the soundblaster.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SoundBlasterOptions.DMA">
+            <summary>
+            The DMA number of the soundblaster.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SoundBlasterOptions.HDMA">
+            <summary>
+            The High DMA number of the soundblaster.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SoundBlasterOptions.SBMixer">
+            <summary>
+            Allow the soundblaster mixer to modify the DOSBox mixer.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SoundBlasterOptions.OplMode">
+            <summary>
+            Type of OPL emulation. On 'auto' the mode is determined by sblaster type. All OPL modes are Adlib-compatible, except for 'cms'.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SoundBlasterOptions.OplEmu">
+            <summary>
+            Provider for the OPL emulation. compat might provide better quality (see oplrate as well).
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SoundBlasterOptions.OplRate">
+            <summary>
+            Sample rate of OPL music emulation. Use 49716 for highest quality (set the mixer rate accordingly).
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.Create">
+            <summary>
+            Create a new Sound Blaster options for DosBox configuration
+            </summary>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.AddSBType(System.Nullable{TioRACLab.DosBox.Options.SoundBlaster})">
+            <summary>
+            Type of Soundblaster to emulate. gb is Gameblaster.
+            </summary>
+            <param name="sbtype">Possible values: sb1, sb2, sbpro1, sbpro2, sb16, gb, none.</param>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.AddSBBase(System.Nullable{TioRACLab.DosBox.Options.IOAddress})">
+            <summary>
+            The IO address of the soundblaster.
+            </summary>
+            <param name="sbbase">ossible values: 220, 240, 260, 280, 2a0, 2c0, 2e0, 300.</param>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.AddIRQ(System.Nullable{TioRACLab.DosBox.Options.IRQ})">
+            <summary>
+            The IRQ number of the soundblaster.
+            </summary>
+            <param name="irq">Possible values: 7, 5, 3, 9, 10, 11, 12.</param>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.AddDMA(System.Nullable{TioRACLab.DosBox.Options.DMA})">
+            <summary>
+            The DMA number of the soundblaster.
+            </summary>
+            <param name="dma">Possible values: 1, 5, 0, 3, 6, 7.</param>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.AddHDMA(System.Nullable{TioRACLab.DosBox.Options.DMA})">
+            <summary>
+            The High DMA number of the soundblaster.
+            </summary>
+            <param name="hdma">Possible values: 1, 5, 0, 3, 6, 7.</param>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.AddSoundMixer(System.Nullable{System.Boolean})">
+            <summary>
+            Allow the soundblaster mixer to modify the DOSBox mixer.
+            </summary>
+            <param name="sbmixer">Allow the soundblaster mixer to modify the DOSBox mixer.</param>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.AddOplMode(System.Nullable{TioRACLab.DosBox.Options.OplMode})">
+            <summary>
+            Type of OPL emulation. On 'auto' the mode is determined by sblaster type. All OPL modes are Adlib-compatible, except for 'cms'.
+            </summary>
+            <param name="oplmode">Possible values: auto, cms, opl2, dualopl2, opl3, none.</param>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.AddOplEmu(System.Nullable{TioRACLab.DosBox.Options.OplEmu})">
+            <summary>
+            Provider for the OPL emulation. compat might provide better quality (see oplrate as well).
+            </summary>
+            <param name="oplemu">Possible values: default, compat, fast.</param>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.AddOplRate(System.Nullable{TioRACLab.DosBox.Options.SampleRate})">
+            <summary>
+            Sample rate of OPL music emulation. Use 49716 for highest quality (set the mixer rate accordingly).
+            </summary>
+            <param name="oplrate">Possible values: 44100, 49716, 48000, 32000, 22050, 16000, 11025, 8000.</param>
+            <returns>Sound Blaster options to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.ToString">
+            <summary>
+            Cast Sound Blaster options to string
+            </summary>
+            <returns>Sound Blaster options ini format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SoundBlasterOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load Sound Blaster options value from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options DosBox data</param>
         </member>
         <member name="T:TioRACLab.DosBox.Options.VideoOutput">
             <summary>

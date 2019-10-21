@@ -46,7 +46,7 @@ namespace TioRACLab.DosBoxTest.Options
 
             
             Assert.AreEqual(sblaster.SBType, SoundBlaster.SoundBlaster16);
-            Assert.AreEqual(sblaster.SBBase, IOAddress.Port220);
+            Assert.AreEqual(sblaster.SBBase, IOAddress.Address220);
             Assert.AreEqual(sblaster.IRQ, IRQ.IRQ7);
             Assert.AreEqual(sblaster.DMA, DMA.DMA1);
             Assert.AreEqual(sblaster.HDMA, DMA.DMA5);

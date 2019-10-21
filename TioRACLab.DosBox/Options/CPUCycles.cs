@@ -207,7 +207,14 @@ namespace TioRACLab.DosBox.Options
 
         #region "CPUCycles Consts"
 
+        /// <summary>
+        /// For realmode games, this option switches to realmode default number of cycles or 3000 if not specified.
+        /// </summary>
         public static CPUCycles AUTO = new CPUCycles(0);
+
+        /// <summary>
+        /// Automatically sets the cycles so approximately the (optional) default%-value of your host CPU is used. If the value is not specified it defaults to 100%.
+        /// </summary>
         public static CPUCycles MAX = new CPUCycles(uint.MaxValue);
 
         #endregion "CPUCycles Consts"

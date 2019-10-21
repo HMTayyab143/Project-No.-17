@@ -5,30 +5,57 @@ using System.Text;
 
 namespace TioRACLab.DosBox.Options
 {
+    /// <summary>
+    ///  Input/Output base address is the first address of a range of consecutive read/write addresses that a device uses on the x86's IO bus.
+    /// </summary>
     public enum IOAddress
     {
+        /// <summary>
+        /// Address 220 - Default Sound Card IO
+        /// </summary>
         [Description("220")]
-        Port220,
+        Address220,
 
+        /// <summary>
+        /// Address 240
+        /// </summary>
         [Description("240")]
-        Port240,
+        Address240,
 
+        /// <summary>
+        /// Address 260
+        /// </summary>
         [Description("260")]
-        Port260,
+        Address260,
 
+        /// <summary>
+        /// Address 280
+        /// </summary>
         [Description("280")]
-        Port280,
+        Address280,
 
+        /// <summary>
+        /// Address 2A0
+        /// </summary>
         [Description("2a0")]
-        Port2A0,
+        Address2A0,
 
+        /// <summary>
+        /// Address 2C0
+        /// </summary>
         [Description("2c0")]
-        Port2C0,
+        Address2C0,
 
+        /// <summary>
+        /// Address 2E0
+        /// </summary>
         [Description("2e0")]
-        Port2E0,
+        Address2E0,
 
+        /// <summary>
+        /// Address 300 - Default NIC Card
+        /// </summary>
         [Description("300")]
-        Port300
+        Address300
     }
 }

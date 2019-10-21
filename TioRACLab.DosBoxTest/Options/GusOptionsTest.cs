@@ -40,7 +40,7 @@ namespace TioRACLab.DosBoxTest.Options
 
             Assert.IsFalse(gus.GUS);
             Assert.AreEqual(gus.GusRate, SampleRate.Rate44100);
-            Assert.AreEqual(gus.GusBase, IOAddress.Port240);
+            Assert.AreEqual(gus.GusBase, IOAddress.Address240);
             Assert.AreEqual(gus.GusIRQ, IRQ.IRQ5);
             Assert.AreEqual(gus.GusDMA, DMA.DMA3);
             Assert.AreEqual(gus.UltraDir, @"C:\ULTRASND");

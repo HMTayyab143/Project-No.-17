@@ -4,8 +4,17 @@ using System.Text;
 
 namespace TioRACLab.DosBox.Options
 {
+    /// <summary>
+    /// KeyboardLayout is used to change the layout of the keyboard used for different countries. 
+    /// </summary>
     public struct KeyboardLayout
     {
+        #region "Constructions"
+
+        /// <summary>
+        /// Crete a KeyboardLayout struct
+        /// </summary>
+        /// <param name="layout">keyboard layout</param>
         public KeyboardLayout(string layout)
         {
             if (string.IsNullOrWhiteSpace(layout))
@@ -40,17 +49,39 @@ namespace TioRACLab.DosBox.Options
             }
         }
 
+        /// <summary>
+        /// Crete a KeyboardLayout struct
+        /// </summary>
+        /// <param name="layout">Keyboard layout</param>
+        /// <param name="character">Character set</param>
         public KeyboardLayout(string layout, uint character)
         {
             Layout = layout;
             Character = character;
         }
 
+        #endregion "Constructions"
 
+        #region "Properties"
+
+        /// <summary>
+        /// Keyboard layout 
+        /// </summary>
         public string Layout { get; set; }
 
+        /// <summary>
+        /// Character set
+        /// </summary>
         public uint? Character { get; set; }
 
+        #endregion "Properties"
+
+        #region "String Cast"
+
+        /// <summary>
+        /// Cast struct KeyboardLayout to string
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             if (Layout == null && Character == null)
@@ -61,5 +92,7 @@ namespace TioRACLab.DosBox.Options
             else
                 return Layout;
         }
+
+        #endregion "String Cast"
     }
 }

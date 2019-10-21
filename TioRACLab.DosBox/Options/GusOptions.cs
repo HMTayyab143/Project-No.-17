@@ -178,7 +178,7 @@ namespace TioRACLab.DosBox.Options
         /// </summary>
         /// <param name="gusbase">Possible values: 240, 220, 260, 280, 2a0, 2c0, 2e0, 300.</param>
         /// <returns>DosBox GUS configuration to add another configuration</returns>
-        public GusOptions AddGusBase(IOAddress? gusbase = IOAddress.Port240)
+        public GusOptions AddGusBase(IOAddress? gusbase = IOAddress.Address240)
         {
             GusBase = gusbase;
             return this;

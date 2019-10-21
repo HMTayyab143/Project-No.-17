@@ -220,7 +220,7 @@ namespace TioRACLab.DosBox.Options
         /// </summary>
         /// <param name="sbbase">ossible values: 220, 240, 260, 280, 2a0, 2c0, 2e0, 300.</param>
         /// <returns>Sound Blaster options to add another configuration</returns>
-        public SoundBlasterOptions AddSBBase(IOAddress? sbbase = IOAddress.Port220)
+        public SoundBlasterOptions AddSBBase(IOAddress? sbbase = IOAddress.Address220)
         {
             SBBase = sbbase;
             return this;
