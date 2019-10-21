@@ -19,7 +19,14 @@ namespace TioRACLab.DosBox.Commands
             var commandsList = commands.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None).ToList();
 
             foreach (var command in commandsList)
-                this.Add(new CustomCommand(command));
+                Add(command);
+        }
+
+        public Command Add(string command)
+        {
+            var cmd = Command.CreateCommand(command);
+            Add(cmd);
+            return cmd;
         }
 
         public override string ToString()

@@ -67,5 +67,10 @@ namespace TioRACLab.DosBox.Commands
         }
 
         #endregion "INotifyPropertyChanged"
+
+        public static Command CreateCommand(string command)
+        {
+            return new CustomCommand(command);
+        }
     }
 }

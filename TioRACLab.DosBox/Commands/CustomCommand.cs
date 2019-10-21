@@ -8,13 +8,13 @@ namespace TioRACLab.DosBox.Commands
     {
         #region "Constructions"
 
-        public CustomCommand()
+        internal protected CustomCommand()
             : base (null)
         {
 
         }
 
-        public CustomCommand(string command)
+        internal protected CustomCommand(string command)
             : this()
         {
 
