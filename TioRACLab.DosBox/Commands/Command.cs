@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TioRACLab.DosBox.Commands
 {
-    public abstract class Command : INotifyPropertyChanged
+    public abstract class Command : DosBoxBaseClass
     {
         #region "Constructions"
 
@@ -39,38 +39,13 @@ namespace TioRACLab.DosBox.Commands
 
         #endregion "Properties"
 
-        #region "INotifyPropertyChanged"
-
-        /// <summary>
-        /// Handler Property Changed
-        /// </summary>
-        protected PropertyChangedEventHandler PropertyChangedHandler;
-        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
-        {
-            add
-            {
-                PropertyChangedHandler += value;
-            }
-            remove
-            {
-                PropertyChangedHandler -= value;
-            }
-        }
-
-        /// <summary>
-        /// Notify Property Changed
-        /// </summary>
-        /// <param name="name">Name Property</param>
-        protected void OnPropertyChanged(string name)
-        {
-            PropertyChangedHandler?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
-        #endregion "INotifyPropertyChanged"
+        #region "Create"
 
         public static Command CreateCommand(string command)
         {
             return new CustomCommand(command);
         }
+
+        #endregion "Create"
     }
 }

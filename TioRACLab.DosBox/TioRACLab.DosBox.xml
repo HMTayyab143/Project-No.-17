@@ -4,12 +4,12 @@
         <name>TioRACLab.DosBox</name>
     </assembly>
     <members>
-        <member name="F:TioRACLab.DosBox.Commands.Command.PropertyChangedHandler">
+        <member name="F:TioRACLab.DosBox.DosBoxBaseClass.PropertyChangedHandler">
             <summary>
             Handler Property Changed
             </summary>
         </member>
-        <member name="M:TioRACLab.DosBox.Commands.Command.OnPropertyChanged(System.String)">
+        <member name="M:TioRACLab.DosBox.DosBoxBaseClass.OnPropertyChanged(System.String)">
             <summary>
             Notify Property Changed
             </summary>
@@ -300,17 +300,6 @@
             </summary>
             <returns>DosBox parameters to add another parameter</returns>
         </member>
-        <member name="F:TioRACLab.DosBox.DosBoxParameters.PropertyChangedHandler">
-            <summary>
-            Handler Property Changed
-            </summary>
-        </member>
-        <member name="M:TioRACLab.DosBox.DosBoxParameters.OnPropertyChanged(System.String)">
-            <summary>
-            Notify Property Changed
-            </summary>
-            <param name="name">Name Property</param>
-        </member>
         <member name="M:TioRACLab.DosBox.DosBoxParameters.ToString">
             <summary>
             Return string with parameters
@@ -594,17 +583,6 @@
             <summary>
             Section name of options file
             </summary>
-        </member>
-        <member name="F:TioRACLab.DosBox.Options.BaseOptions.PropertyChangedHandler">
-            <summary>
-            Handler Property Changed
-            </summary>
-        </member>
-        <member name="M:TioRACLab.DosBox.Options.BaseOptions.OnPropertyChanged(System.String)">
-            <summary>
-            Notify Property Changed
-            </summary>
-            <param name="name">Name Property</param>
         </member>
         <member name="M:TioRACLab.DosBox.Options.BaseOptions.ToString">
             <summary>
@@ -2251,6 +2229,113 @@
             Load SDL options values from dictionary
             </summary>
             <param name="dictionary">Dictionary with options SDL data</param>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.Serial">
+            <summary>
+            Serial Config
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Serial.#ctor">
+            <summary>
+            Create a serial class instance
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Serial.Device">
+            <summary>
+            Serial device type
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Serial.RealPort">
+            <summary>
+            Real computer port
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Serial.Port">
+            <summary>
+            TCP port connection
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.Serial.Server">
+            <summary>
+            Server TCP port connection
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Serial.ToString">
+            <summary>
+            Casto Serial to string
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Serial.Create(System.String)">
+            <summary>
+            Create serial config from string
+            </summary>
+            <param name="serial">String serial config</param>
+            <returns></returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Serial.CreateDisabled">
+            <summary>
+            Create serial of type Disabled
+            </summary>
+            <returns>Serial Disabled</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Serial.CreateDummy">
+            <summary>
+            Create serial of type Dummy
+            </summary>
+            <returns>Serial Dummy</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Serial.CreateModem(System.Nullable{System.UInt32})">
+            <summary>
+            Create serial of type Modem
+            </summary>
+            <param name="listenport">Listen TCP/UDP port</param>
+            <returns>Serial Modem</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Serial.CreateNullModem(System.Nullable{System.UInt32},System.String)">
+            <summary>
+            Create serial of type NullModem
+            </summary>
+            <param name="port">TCP/UDP Port</param>
+            <param name="server">Server IP or dns name</param>
+            <returns>Serial NullModem</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.Serial.CreateDirectSerial(System.String)">
+            <summary>
+            Create serial of type Direct Serial
+            </summary>
+            <param name="realport">Serial real port name</param>
+            <returns>Serial DirectSerial</returns>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.SerialDevice">
+            <summary>
+            Device Serial Type
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SerialDevice.Disabled">
+            <summary>
+            Disabled
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SerialDevice.Dummy">
+            <summary>
+            Dummy
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SerialDevice.Modem">
+            <summary>
+            Modem
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SerialDevice.NullModem">
+            <summary>
+            NullModem
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.SerialDevice.DirectSerial">
+            <summary>
+            DirectSerial
+            </summary>
         </member>
         <member name="T:TioRACLab.DosBox.Options.SerialOptions">
             <summary>

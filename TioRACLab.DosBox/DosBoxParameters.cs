@@ -9,7 +9,7 @@ namespace TioRACLab.DosBox
     /// <summary>
     /// DosBox command line parameters see: <a href="https://www.dosbox.com/wiki/Usage">DosBox Wiki: Usage</a>
     /// </summary>
-    public class DosBoxParameters : INotifyPropertyChanged
+    public class DosBoxParameters : DosBoxBaseClass
     {
         #region "Constructions"
 
@@ -681,34 +681,6 @@ namespace TioRACLab.DosBox
 
         #endregion "Fluent"
 
-        #region "INotifyPropertyChanged"
-
-        /// <summary>
-        /// Handler Property Changed
-        /// </summary>
-        protected PropertyChangedEventHandler PropertyChangedHandler;
-        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
-        {
-            add
-            {
-                PropertyChangedHandler += value;
-            }
-            remove
-            {
-                PropertyChangedHandler -= value;
-            }
-        }
-
-        /// <summary>
-        /// Notify Property Changed
-        /// </summary>
-        /// <param name="name">Name Property</param>
-        protected void OnPropertyChanged(string name)
-        {
-            PropertyChangedHandler?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
-        #endregion "INotifyPropertyChanged"
 
         #region "String Casts"
 

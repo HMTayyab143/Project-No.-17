@@ -8,7 +8,7 @@ namespace TioRACLab.DosBox.Options
     /// <summary>
     /// Abstract class for using option classes
     /// </summary>
-    public abstract class BaseOptions : INotifyPropertyChanged
+    public abstract class BaseOptions : DosBoxBaseClass
     {
         #region "Constructions"
 
@@ -40,35 +40,6 @@ namespace TioRACLab.DosBox.Options
         public string SectionName { get; set; }
 
         #endregion "Properties"
-
-        #region "INotifyPropertyChanged"
-
-        /// <summary>
-        /// Handler Property Changed
-        /// </summary>
-        protected PropertyChangedEventHandler PropertyChangedHandler;
-        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
-        {
-            add
-            {
-                PropertyChangedHandler += value;
-            }
-            remove
-            {
-                PropertyChangedHandler -= value;
-            }
-        }
-
-        /// <summary>
-        /// Notify Property Changed
-        /// </summary>
-        /// <param name="name">Name Property</param>
-        protected void OnPropertyChanged(string name)
-        {
-            PropertyChangedHandler?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
-        #endregion "INotifyPropertyChanged"
 
         #region "Cast String"
 
