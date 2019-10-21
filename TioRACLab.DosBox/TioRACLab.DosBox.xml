@@ -2252,6 +2252,83 @@
             </summary>
             <param name="dictionary">Dictionary with options SDL data</param>
         </member>
+        <member name="T:TioRACLab.DosBox.Options.SerialOptions">
+            <summary>
+            <para>Serial Options for DosBox</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Configuration:SerialPort">Serial Port Configuriotn SDL</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SerialOptions.#ctor">
+            <summary>
+            Create instance of Serial options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SerialOptions.Serial1">
+            <summary>
+            Set Serial 1.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SerialOptions.Serial2">
+            <summary>
+            Set Serial 2.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SerialOptions.Serial3">
+            <summary>
+            Set Serial 3.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SerialOptions.Serial4">
+            <summary>
+            Set Serial 4.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SerialOptions.Create">
+            <summary>
+            Create a new Serial Options for DosBox configuration
+            </summary>
+            <returns>DosBox Serial configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SerialOptions.AddSerial1(TioRACLab.DosBox.Options.Serial)">
+            <summary>
+            Add Serial 1.
+            </summary>
+            <param name="serial">Serial 1.</param>
+            <returns>DosBox Serial configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SerialOptions.AddSerial2(TioRACLab.DosBox.Options.Serial)">
+            <summary>
+            Add Serial 2.
+            </summary>
+            <param name="serial">Serial 2.</param>
+            <returns>DosBox Serial configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SerialOptions.AddSerial3(TioRACLab.DosBox.Options.Serial)">
+            <summary>
+            Add Serial 3.
+            </summary>
+            <param name="serial">Serial 3.</param>
+            <returns>DosBox Serial configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SerialOptions.AddSerial4(TioRACLab.DosBox.Options.Serial)">
+            <summary>
+            Add Serial 4.
+            </summary>
+            <param name="serial">Serial 4.</param>
+            <returns>DosBox Serial configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SerialOptions.ToString">
+            <summary>
+            Cast Serial options to string
+            </summary>
+            <returns>String in INI format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SerialOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load Serial options values from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options Serial data</param>
+        </member>
         <member name="T:TioRACLab.DosBox.Options.SimpleIniParse">
             <summary>
             Simple class for read and write INI data
