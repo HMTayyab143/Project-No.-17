@@ -411,6 +411,11 @@
             Process to start dosbox application
             </summary>
         </member>
+        <member name="P:TioRACLab.DosBox.DosBoxStarter.Configuration">
+            <summary>
+            Optional configuration to start application
+            </summary>
+        </member>
         <member name="M:TioRACLab.DosBox.DosBoxStarter.FromProcess(System.String)">
             <summary>
             Create DosBox launcher
@@ -418,11 +423,115 @@
             <param name="filename">DosBox application file name</param>
             <returns>DosBox launcher</returns>
         </member>
-        <member name="M:TioRACLab.DosBox.DosBoxStarter.SetParameters(System.Action{TioRACLab.DosBox.DosBoxParameters})">
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithParameters(System.Action{TioRACLab.DosBox.DosBoxParameters})">
             <summary>
             Edit DosBox application startup parameters 
             </summary>
             <param name="parameters">DosBox Parameters</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithConfiguration">
+            <summary>
+            Create configuration to add options
+            </summary>
+            <returns>DosBox configurations</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithSdlOptions(System.Action{TioRACLab.DosBox.Options.SdlOptions})">
+            <summary>
+            Edit SDL Options to DosBox application
+            </summary>
+            <param name="options">SDL Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithDosBoxOptions(System.Action{TioRACLab.DosBox.Options.DosBoxOptions})">
+            <summary>
+            Edit DosBox Options to DosBox application
+            </summary>
+            <param name="options">DosBox Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithRenderOptions(System.Action{TioRACLab.DosBox.Options.RenderOptions})">
+            <summary>
+            Edit Render Options to DosBox application
+            </summary>
+            <param name="options">Render Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithCPUOptions(System.Action{TioRACLab.DosBox.Options.CPUOptions})">
+            <summary>
+            Edit CPU Options to DosBox application
+            </summary>
+            <param name="options">CPU Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithMixerOptions(System.Action{TioRACLab.DosBox.Options.MixerOptions})">
+            <summary>
+            Edit Mixer Options to DosBox application
+            </summary>
+            <param name="options">Mixer Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithMidiOptions(System.Action{TioRACLab.DosBox.Options.MidiOptions})">
+            <summary>
+            Edit Midi Options to DosBox application
+            </summary>
+            <param name="options">Midi Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithSoundBlasterOptions(System.Action{TioRACLab.DosBox.Options.SoundBlasterOptions})">
+            <summary>
+            Edit SoundBlaster Options to DosBox application
+            </summary>
+            <param name="options">SoundBlaster Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithGUSOptions(System.Action{TioRACLab.DosBox.Options.GusOptions})">
+            <summary>
+            Edit GUS Options to DosBox application
+            </summary>
+            <param name="options">GUS Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithSpeakerOptions(System.Action{TioRACLab.DosBox.Options.SpeakerOptions})">
+            <summary>
+            Edit Speaker Options to DosBox application
+            </summary>
+            <param name="options">Speaker Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithJoystickOptions(System.Action{TioRACLab.DosBox.Options.JoystickOptions})">
+            <summary>
+            Edit Joystick Options to DosBox application
+            </summary>
+            <param name="options">Joystick Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithSerialOptions(System.Action{TioRACLab.DosBox.Options.SerialOptions})">
+            <summary>
+            Edit Serial Options to DosBox application
+            </summary>
+            <param name="options">Serial Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithDOSOptions(System.Action{TioRACLab.DosBox.Options.DosOptions})">
+            <summary>
+            Edit DOS Options to DosBox application
+            </summary>
+            <param name="options">DOS Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithIPXOptions(System.Action{TioRACLab.DosBox.Options.IPXOptions})">
+            <summary>
+            Edit IPX Options to DosBox application
+            </summary>
+            <param name="options">IPX Options</param>
+            <returns>DosBox Launcher</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.WithAutoexecOptions(System.Action{TioRACLab.DosBox.Options.AutoexecOptions})">
+            <summary>
+            Edit Autoexec Options to DosBox application
+            </summary>
+            <param name="options">Autoexec Options</param>
             <returns>DosBox Launcher</returns>
         </member>
         <member name="M:TioRACLab.DosBox.DosBoxStarter.Start">
@@ -434,6 +543,11 @@
         <member name="M:TioRACLab.DosBox.DosBoxStarter.StartAndWait">
             <summary>
             Start and wait for end DosBox Application
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.DosBoxStarter.AddStarterConfiguration">
+            <summary>
+            Create configuratopn file and add to parameters
             </summary>
         </member>
         <member name="T:TioRACLab.DosBox.DosBoxVersion">

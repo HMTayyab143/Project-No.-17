@@ -10,7 +10,7 @@ namespace TioRACLab.DosBoxTest
         public void Sample()
         {
             var dosboxProcess = DosBoxStarter.FromProcess("dosbox.exe")
-                .SetParameters(a => a.AddExit().AddFullscreen());
+                .WithParameters(a => a.AddExit().AddFullscreen());
         }
     }
 }
