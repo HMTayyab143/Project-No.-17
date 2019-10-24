@@ -1,16 +1,22 @@
 # C# DosBox Library
 
-C# library to manage DosBox applciation. Create your own DosBox launcher.
+C# library to manage DosBox application. Create your own DosBox launcher.
 
 ## Functions
 
-- [x] Easy stater DosBox application (99%)
+- [x] Easy starter DosBox application (99%)
 - [x] Edit DosBox options (98%)
 - [ ] Edit Commands (1%)
 - [ ] Edit Mapper (0%)
 - [ ] Tools (in planning)
 
 # Use
+
+Add namespace:
+
+```C#
+using TioRACLab.DosBox;
+```
 
 Simple starter DosBox application.
 
