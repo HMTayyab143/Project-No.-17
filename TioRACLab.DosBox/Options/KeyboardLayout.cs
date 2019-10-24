@@ -94,5 +94,19 @@ namespace TioRACLab.DosBox.Options
         }
 
         #endregion "String Cast"
+
+        #region "Static KeyboardLayout"
+
+        /// <summary>
+        /// None Keyboard Layout 
+        /// </summary>
+        public static KeyboardLayout None => new KeyboardLayout();
+
+        /// <summary>
+        /// Auto Keyboard Layout
+        /// </summary>
+        public static KeyboardLayout Auto => new KeyboardLayout("auto");
+
+        #endregion "Static KeyboardLayout"
     }
 }

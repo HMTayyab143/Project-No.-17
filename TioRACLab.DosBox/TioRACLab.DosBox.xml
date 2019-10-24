@@ -1349,6 +1349,134 @@
             IRQ 12
             </summary>
         </member>
+        <member name="T:TioRACLab.DosBox.Options.Joystick">
+            <summary>
+            Type of joystick
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Joystick.None">
+            <summary>
+            Disables joystick emulation
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Joystick.TwoAxis">
+            <summary>
+            Supports two joysticks
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Joystick.FourAxis">
+            <summary>
+            Supports one joystick, first joystick used
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Joystick.FourAxis2">
+            <summary>
+            Supports one joystick, second joystick used
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Joystick.Thrustmaster">
+            <summary>
+            Thrustmaster
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Joystick.CHFlightstick">
+            <summary>
+            CH Flightstick
+            </summary>
+        </member>
+        <member name="F:TioRACLab.DosBox.Options.Joystick.Auto">
+            <summary>
+            Chooses emulation depending on real joystick(s)
+            </summary>
+        </member>
+        <member name="T:TioRACLab.DosBox.Options.JoystickOptions">
+            <summary>
+            <para>Joystick Options for DosBox</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.JoystickOptions.#ctor">
+            <summary>
+            Create instance of Joystick options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.JoystickOptions.JoystickType">
+            <summary>
+            Type of joystick to emulate
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.JoystickOptions.Timed">
+            <summary>
+            Enable timed intervals for axis. Experiment with this option, if your joystick drifts (away).
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.JoystickOptions.AutoFire">
+            <summary>
+            Continuously fires as long as you keep the button pressed.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.JoystickOptions.Swap34">
+            <summary>
+            Swap the 3rd and the 4th axis. Can be useful for certain joysticks.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.JoystickOptions.ButtonWrap">
+            <summary>
+            Enable button wrapping at the number of emulated buttons.
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.JoystickOptions.Create">
+            <summary>
+            Create a new Joystick Options for DosBox configuration
+            </summary>
+            <returns>DosBox Joystick configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.JoystickOptions.AddJoystickType(System.Nullable{TioRACLab.DosBox.Options.Joystick})">
+            <summary>
+            Type of joystick to emulate.
+            </summary>
+            <param name="joysticktype">Possible values: auto, 2axis, 4axis, 4axis_2, fcs, ch, none.</param>
+            <returns>DosBox Joystick configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.JoystickOptions.AddTimed(System.Nullable{System.Boolean})">
+            <summary>
+            Enable timed intervals for axis. Experiment with this option, if your joystick drifts (away).
+            </summary>
+            <param name="timed">Enable timed intervals for axis. Experiment with this option, if your joystick drifts (away).</param>
+            <returns>DosBox Joystick configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.JoystickOptions.AddAutoFire(System.Nullable{System.Boolean})">
+            <summary>
+            Continuously fires as long as you keep the button pressed.
+            </summary>
+            <param name="autofire">Continuously fires as long as you keep the button pressed.</param>
+            <returns>DosBox Joystick configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.JoystickOptions.AddSwap34(System.Nullable{System.Boolean})">
+            <summary>
+            Swap the 3rd and the 4th axis. Can be useful for certain joysticks.
+            </summary>
+            <param name="swap34">Swap the 3rd and the 4th axis. Can be useful for certain joysticks.</param>
+            <returns>DosBox Joystick configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.JoystickOptions.AddButtonWrap(System.Nullable{System.Boolean})">
+            <summary>
+            Enable button wrapping at the number of emulated buttons.
+            </summary>
+            <param name="buttonwrap">Enable button wrapping at the number of emulated buttons.</param>
+            <returns>DosBox Joystick configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.JoystickOptions.ToString">
+            <summary>
+            Cast Joystick options to string
+            </summary>
+            <returns>String in INI format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.JoystickOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load Joystick options values from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options Joystick data</param>
+        </member>
         <member name="T:TioRACLab.DosBox.Options.KeyboardLayout">
             <summary>
             KeyboardLayout is used to change the layout of the keyboard used for different countries. 
@@ -1382,6 +1510,16 @@
             Cast struct KeyboardLayout to string
             </summary>
             <returns></returns>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.KeyboardLayout.None">
+            <summary>
+            None Keyboard Layout 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.KeyboardLayout.Auto">
+            <summary>
+            Auto Keyboard Layout
+            </summary>
         </member>
         <member name="T:TioRACLab.DosBox.Options.MidiDevice">
             <summary>
