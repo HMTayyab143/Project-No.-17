@@ -903,6 +903,131 @@
             DMA7
             </summary>
         </member>
+        <member name="T:TioRACLab.DosBox.Options.DosBoxConfiguration">
+            <summary>
+            The DosBox configurations class
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxConfiguration.#ctor">
+            <summary>
+            Create empty DosBox configurations
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxConfiguration.#ctor(System.String)">
+            <summary>
+            Create from dosbox config string
+            </summary>
+            <param name="config">String with dosbox configuration</param>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxConfiguration.#ctor(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Create from dictionary with config data
+            </summary>
+            <param name="dictionary">dictionary with config data</param>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.SDL">
+            <summary>
+            This section contains all of the low level system settings for how DOSBox interacts with your real hardware.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.DosBox">
+            <summary>
+            The [dosbox] section contains various settings that do not pertain to any other section
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.Render">
+            <summary>
+            The rendering (drawing) section controls methods that DOSBox uses to improve the speed and quality of the graphics displayed on the screen.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.CPU">
+            <summary>
+            The CPU section controls how DOSBox tries to emulate the CPU, how fast the emulation should be, and to adjust it.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.Mixer">
+            <summary>
+            Here you can define the quality of emulated audio. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.Midi">
+            <summary>
+            Here you can define any MIDI related settings.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.SoundBlaster">
+            <summary>
+            Sound Blaster related settings. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.GUS">
+            <summary>
+            Gravis Ultra Sound related settings. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.Speaker">
+            <summary>
+            PC Speaker related settings. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.Joystick">
+            <summary>
+            Joystick related settings. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.Serial">
+            <summary>
+            Serial port related settings. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.DOS">
+            <summary>
+            DOS related settings. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.IPX">
+            <summary>
+            IPX protocol related settings. 
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.DosBoxConfiguration.Autoexec">
+            <summary>
+            Here you can define the contents of the AUTOEXEC.BAT file
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxConfiguration.ToString">
+            <summary>
+            Cast the configuration to string format
+            </summary>
+            <returns>String DosBox configuration format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxConfiguration.LoadDeafult">
+            <summary>
+            Load the default DosBox configuration
+            </summary>
+            <returns>DosBoxConfiguration data</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxConfiguration.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load configuration from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with dosbox configuration data.</param>
+            <returns>DosBoxConfiguration data</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxConfiguration.LoadFromFile(System.String)">
+            <summary>
+            Load configuration from file
+            </summary>
+            <param name="file">DosBox configuration file name</param>
+            <returns>DosBoxConfiguration data</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.DosBoxConfiguration.SaveAsFile(System.String,System.Boolean)">
+            <summary>
+            Save configuration as file
+            </summary>
+            <param name="file">File name</param>
+            <param name="overwrite">Overwrite file exists</param>
+        </member>
         <member name="T:TioRACLab.DosBox.Options.DosBoxMachine">
             <summary>
             The type of machine DOSBox tries to emulate.

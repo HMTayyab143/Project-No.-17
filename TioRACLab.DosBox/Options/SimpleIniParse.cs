@@ -35,7 +35,7 @@ namespace TioRACLab.DosBox.Options
                     listValues.Add(ParseBool(value));
                 else if (value?.GetType().IsEnum ?? false)
                     listValues.Add(ParseEnum(value));
-                else
+                else if (value != null)
                     listValues.Add(value.ToString());
             }
 
