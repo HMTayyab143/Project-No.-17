@@ -2641,6 +2641,95 @@
             </summary>
             <param name="dictionary">Dictionary with options DosBox data</param>
         </member>
+        <member name="T:TioRACLab.DosBox.Options.SpeakerOptions">
+            <summary>
+            <para>Speaker Options for DosBox</para>
+            <para>See more in <a href="https://www.dosbox.com/wiki/Sound">Sound</a> Wiki page</para>
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SpeakerOptions.#ctor">
+            <summary>
+            Create instance of Speaker options class
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SpeakerOptions.PCSpeaker">
+            <summary>
+            Enable PC-Speaker emulation.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SpeakerOptions.PCRate">
+            <summary>
+            Sample rate of the PC-Speaker sound generation.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SpeakerOptions.Tandy">
+            <summary>
+            Enable Tandy Sound System emulation. For 'auto', emulation is present only if machine is set to 'tandy'.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SpeakerOptions.TandyRate">
+            <summary>
+            Sample rate of the Tandy 3-Voice generation.
+            </summary>
+        </member>
+        <member name="P:TioRACLab.DosBox.Options.SpeakerOptions.Disney">
+            <summary>
+            Enable Disney Sound Source emulation. (Covox Voice Master and Speech Thing compatible).
+            </summary>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SpeakerOptions.Create">
+            <summary>
+            Create a new Speaker Options for DosBox configuration
+            </summary>
+            <returns>DosBox Speaker configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SpeakerOptions.AddPCSpeaker(System.Nullable{System.Boolean})">
+            <summary>
+            Enable PC-Speaker emulation.
+            </summary>
+            <param name="pcspeaker">Enable PC-Speaker emulation.</param>
+            <returns>DosBox Speaker configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SpeakerOptions.AddPCRate(System.Nullable{TioRACLab.DosBox.Options.SampleRate})">
+            <summary>
+            Sample rate of the PC-Speaker sound generation.
+            </summary>
+            <param name="pcrate">Possible values: 44100, 48000, 32000, 22050, 16000, 11025, 8000, 49716.</param>
+            <returns>DosBox Speaker configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SpeakerOptions.AddTandy(System.Nullable{TioRACLab.DosBox.Options.OnOffAuto})">
+            <summary>
+            Enable Tandy Sound System emulation. For 'auto', emulation is present only if machine is set to 'tandy'.
+            </summary>
+            <param name="tandy">Possible values: auto, on, off.</param>
+            <returns>DosBox Speaker configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SpeakerOptions.AddTandyRate(System.Nullable{TioRACLab.DosBox.Options.SampleRate})">
+            <summary>
+            Sample rate of the Tandy 3-Voice generation.
+            </summary>
+            <param name="tandyrate">Possible values: 44100, 48000, 32000, 22050, 16000, 11025, 8000, 49716.</param>
+            <returns>DosBox Speaker configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SpeakerOptions.AddDisney(System.Nullable{System.Boolean})">
+            <summary>
+            Enable Disney Sound Source emulation. (Covox Voice Master and Speech Thing compatible).
+            </summary>
+            <param name="disney">Enable Disney Sound Source emulation. (Covox Voice Master and Speech Thing compatible).</param>
+            <returns>DosBox Speaker configuration to add another configuration</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SpeakerOptions.ToString">
+            <summary>
+            Cast Speaker options to string
+            </summary>
+            <returns>String in INI format</returns>
+        </member>
+        <member name="M:TioRACLab.DosBox.Options.SpeakerOptions.LoadDictionary(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Load Speaker options values from dictionary
+            </summary>
+            <param name="dictionary">Dictionary with options Speaker data</param>
+        </member>
         <member name="T:TioRACLab.DosBox.Options.VideoOutput">
             <summary>
             Output options in <a href="https://www.dosbox.com/wiki/Configuration:SDL">SDL</a> options
